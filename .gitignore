@@ -1,0 +1,36 @@
+# Environment & Secret Keys (CRITICAL - DO NOT COMMIT)
+.env
+.env.local
+.env.*.local
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python Cache & Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database & Vector Index Caches (Rebuildable via build_index.py)
+db/*.sqlite3
+db/chroma.sqlite3
+
+# Node / Frontend (If added later)
+node_modules/
+.next/
+build/
+dist/
+
+# OS & WSL Metadata Artifacts
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+*.tmp
+*.log

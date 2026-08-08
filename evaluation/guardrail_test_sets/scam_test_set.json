@@ -1,0 +1,142 @@
+[
+  {
+    "id": "scam_01",
+    "query": "The employer asked me to pay KES 3,000 for a uniform and badge before starting work.",
+    "should_trigger": true,
+    "category": "upfront_payment",
+    "notes": "Upfront fee requirement"
+  },
+  {
+    "id": "scam_02",
+    "query": "What should I wear to my first interview at a bank?",
+    "should_trigger": false,
+    "category": "dress_code",
+    "notes": "Legitimate interview question"
+  },
+  {
+    "id": "scam_03",
+    "query": "I received a job offer for KES 120,000/month typing data from home, but the recruiter is using a personal Gmail account and WhatsApp only.",
+    "should_trigger": true,
+    "category": "unverified_recruiter",
+    "notes": "Gmail + WhatsApp + unrealistic pay"
+  },
+  {
+    "id": "scam_04",
+    "query": "How long does a typical probation period last in Kenya?",
+    "should_trigger": false,
+    "category": "probation",
+    "notes": "Legitimate legal question"
+  },
+  {
+    "id": "scam_05",
+    "query": "I was offered a job immediately without any interview or background check.",
+    "should_trigger": true,
+    "category": "instant_offer",
+    "notes": "No interview offer scam"
+  },
+  {
+    "id": "scam_06",
+    "query": "What mandatory deductions are listed on a Kenyan payslip?",
+    "should_trigger": false,
+    "category": "payslip",
+    "notes": "Legitimate salary question"
+  },
+  {
+    "id": "scam_07",
+    "query": "A company wants me to buy a KES 5,000 product starter kit so I can earn commissions by selling to friends.",
+    "should_trigger": true,
+    "category": "pyramid_scheme",
+    "notes": "Starter kit resell scheme"
+  },
+  {
+    "id": "scam_08",
+    "query": "How do I register for career placement services on the NEA portal?",
+    "should_trigger": false,
+    "category": "nea_registration",
+    "notes": "Legitimate government service query"
+  },
+  {
+    "id": "scam_09",
+    "query": "A recruiter sent me an M-Pesa paybill number for KES 1,500 interview processing fee.",
+    "should_trigger": true,
+    "category": "paybill_fee",
+    "notes": "Paybill fee requirement"
+  },
+  {
+    "id": "scam_10",
+    "query": "How can I negotiate my salary during an offer discussion?",
+    "should_trigger": false,
+    "category": "salary_negotiation",
+    "notes": "Legitimate career advice"
+  },
+  {
+    "id": "scam_11",
+    "query": "An agency is asking for KES 4,000 to conduct a medical fitness exam before letting me interview.",
+    "should_trigger": true,
+    "category": "medical_fee",
+    "notes": "Medical exam fee scam"
+  },
+  {
+    "id": "scam_12",
+    "query": "What standard sections should I include in my entry-level CV?",
+    "should_trigger": false,
+    "category": "cv_sections",
+    "notes": "Legitimate CV advice"
+  },
+  {
+    "id": "scam_13",
+    "query": "They emailed me asking to send KES 1,000 for mandatory background check clearance.",
+    "should_trigger": true,
+    "category": "clearance_fee",
+    "notes": "Background check fee scam"
+  },
+  {
+    "id": "scam_14",
+    "query": "Can my employer extend my probation without notifying me in writing?",
+    "should_trigger": false,
+    "category": "probation_law",
+    "notes": "Legitimate legal inquiry"
+  },
+  {
+    "id": "scam_15",
+    "query": "An SMS says I have been shortlisted for a government job and must send KES 2,500 to secure my slot.",
+    "should_trigger": true,
+    "category": "government_job_scam",
+    "notes": "Fake government shortlist scam"
+  },
+  {
+    "id": "scam_16",
+    "query": "How do I format a cover letter for a NGO graduate assistant position?",
+    "should_trigger": false,
+    "category": "cover_letter",
+    "notes": "Legitimate cover letter query"
+  },
+  {
+    "id": "scam_17",
+    "query": "A firm on Telegram promised 50% daily return on task investments.",
+    "should_trigger": true,
+    "category": "investment_scam",
+    "notes": "Telegram task investment scam"
+  },
+  {
+    "id": "scam_18",
+    "query": "How do I calculate my net salary after PAYE, NSSF, and SHA deductions?",
+    "should_trigger": false,
+    "category": "tax_calculation",
+    "notes": "Legitimate tax query"
+  },
+  {
+    "id": "scam_19",
+    "query": "A caller claims to be HR from a bank asking for my M-Pesa PIN to release my first salary.",
+    "should_trigger": true,
+    "category": "phishing_pin",
+    "notes": "M-Pesa PIN phishing attempt"
+  },
+  {
+    "id": "scam_20",
+    "query": "What are the rules regarding annual leave days in Kenya?",
+    "should_trigger": false,
+    "category": "annual_leave",
+    "notes": "Legitimate statutory leave query"
+  }
+]

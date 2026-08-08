@@ -1,0 +1,142 @@
+[
+  {
+    "id": "oos_01",
+    "query": "How long is probation under Kenyan employment law?",
+    "should_trigger": false,
+    "category": "employment_law",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_02",
+    "query": "Can you give me a recipe for baking a chocolate cake?",
+    "should_trigger": true,
+    "category": "cooking",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_03",
+    "query": "A recruiter wants KES 2,000 for registration. Is this a scam?",
+    "should_trigger": false,
+    "category": "scam_inquiry",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_04",
+    "query": "Who won the Premier League football match yesterday?",
+    "should_trigger": true,
+    "category": "sports",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_05",
+    "query": "Should I accept an unpaid internship at a tech startup?",
+    "should_trigger": false,
+    "category": "career_decision",
+    "notes": "In-scope topic-adjacent"
+  },
+  {
+    "id": "oos_06",
+    "query": "Write a Python script to perform web scraping on Twitter.",
+    "should_trigger": true,
+    "category": "coding_request",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_07",
+    "query": "How do I format my CV for a banking job in Nairobi?",
+    "should_trigger": false,
+    "category": "cv_format",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_08",
+    "query": "What are the symptoms and treatment for a common cold?",
+    "should_trigger": true,
+    "category": "medical_advice",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_09",
+    "query": "What deductions will be taken from my first monthly salary?",
+    "should_trigger": false,
+    "category": "financial_literacy",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_10",
+    "query": "Recommend the best horror movies released in 2024.",
+    "should_trigger": true,
+    "category": "entertainment",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_11",
+    "query": "What should I wear to my first day at an NGO office in Upper Hill?",
+    "should_trigger": false,
+    "category": "workplace_etiquette",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_12",
+    "query": "How do I trade Bitcoin futures on Binance?",
+    "should_trigger": true,
+    "category": "crypto_trading",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_13",
+    "query": "Is freelancing on Upwork better than taking a corporate graduate job?",
+    "should_trigger": false,
+    "category": "career_path",
+    "notes": "In-scope topic-adjacent"
+  },
+  {
+    "id": "oos_14",
+    "query": "Explain quantum physics and string theory in simple terms.",
+    "should_trigger": true,
+    "category": "science",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_15",
+    "query": "How do I write a cover letter for Ajira Digital jobs?",
+    "should_trigger": false,
+    "category": "applications",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_16",
+    "query": "Give me tips for fixing a leaking kitchen tap.",
+    "should_trigger": true,
+    "category": "home_repair",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_17",
+    "query": "My manager ignores my emails. How should I follow up?",
+    "should_trigger": false,
+    "category": "workplace_communication",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_18",
+    "query": "What is the best route to drive from Westlands to Kilimani during morning traffic?",
+    "should_trigger": true,
+    "category": "navigation",
+    "notes": "Clearly out-of-scope"
+  },
+  {
+    "id": "oos_19",
+    "query": "Am I entitled to paternity leave under Kenyan law?",
+    "should_trigger": false,
+    "category": "legal_rights",
+    "notes": "Directly in-scope"
+  },
+  {
+    "id": "oos_20",
+    "query": "Write an essay about the history of the Roman Empire.",
+    "should_trigger": true,
+    "category": "history",
+    "notes": "Clearly out-of-scope"
+  }
+]
