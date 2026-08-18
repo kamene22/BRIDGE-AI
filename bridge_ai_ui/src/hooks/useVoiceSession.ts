@@ -111,7 +111,8 @@ export function useVoiceSession() {
   // ── Token Management ────────────────────────────────
 
   const fetchToken = useCallback(async (): Promise<string> => {
-    const res = await fetch('/api/token', { method: 'POST' });
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://bridge-ai-backend-91js.onrender.com';
+    const res = await fetch(`${API_BASE_URL}/api/token`, { method: 'POST' });
     if (!res.ok) throw new Error(`Token fetch failed: ${res.status}`);
     const data = await res.json();
     tokenExpiryRef.current = new Date(data.expires_at).getTime();

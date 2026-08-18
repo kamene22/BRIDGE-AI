@@ -173,8 +173,10 @@ export const useAppStore = create<AppState>((set, get) => ({
 
     addMessage({ role: 'user', text });
 
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://bridge-ai-backend-91js.onrender.com';
+
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text, session_id: sessionId }),
