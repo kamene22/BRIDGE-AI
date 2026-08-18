@@ -67,6 +67,20 @@ class VoiceToolRequest(BaseModel):
     arguments: Dict[str, Any]
     session_id: Optional[str] = 'default'
 
+@app.get('/')
+def root():
+    return {
+        'status': 'online',
+        'app': 'Bridge AI (Amani) Backend API',
+        'version': '1.0.0',
+        'docs_url': '/docs',
+        'health_url': '/health'
+    }
+
+@app.get('/health')
+def health_check():
+    return {'status': 'healthy', 'timestamp': datetime.datetime.now(tz=datetime.timezone.utc).isoformat()}
+
 @app.get('/api/welcome')
 def welcome():
     return {
