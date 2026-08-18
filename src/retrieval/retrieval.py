@@ -49,23 +49,31 @@ class RetrievalEngine:
             settings=chromadb.config.Settings(anonymized_telemetry=False)
         )
         
-        # Connect to Dual Multi-Index Collections (REAPER Architecture)
+        # Connect to Dual Multi-Index / Fallback Collections
         try:
-            self.legal_collection = self.chroma_client.get_collection("kenya_employment_act_index")
-            self.handbook_collection = self.chroma_client.get_collection("kenya_career_handbook_index")
-            self.collection = self.legal_collection
-            self.has_multi_index = True
-        except Exception:
-            try:
-                self.collection = self.chroma_client.get_collection("bridge_ai_corpus")
-                self.legal_collection = self.collection
-                self.handbook_collection = self.collection
-                self.has_multi_index = False
-            except Exception:
-                self.legal_collection = self.chroma_client.get_or_create_collection("kenya_employment_act_index")
-                self.handbook_collection = self.chroma_client.get_or_create_collection("kenya_career_handbook_index")
-                self.collection = self.chroma_client.get_or_create_collection("bridge_ai_corpus")
+            self.collection = self.chroma_client.get_or_create_collection("bridge_ai_corpus")
+            self.legal_collection = self.chroma_client.get_or_create_collection("kenya_employment_act_index")
+            self.handbook_collection = self.chroma_client.get_or_create_collection("kenya_career_handbook_index")
+            
+            if self.legal_collection.count() > 0 and self.handbook_collection.count() > 0:
                 self.has_multi_index = True
+            elif self.collection.count() > 0:
+                self.has_multi_index = False
+            else:
+                print("[RetrievalEngine] Vector index empty. Populating ChromaDB from corpus...")
+                project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+                if project_root not in sys.path:
+                    sys.path.insert(0, project_root)
+                from src.ingestion.build_index import build_vector_index
+                build_vector_index()
+                self.collection = self.chroma_client.get_or_create_collection("bridge_ai_corpus")
+                self.has_multi_index = False
+        except Exception as e:
+            print(f"[RetrievalEngine Collection Init Warning]: {e}")
+            self.collection = self.chroma_client.get_or_create_collection("bridge_ai_corpus")
+            self.legal_collection = self.collection
+            self.handbook_collection = self.collection
+            self.has_multi_index = False
         
         # Initialize Gemini Provider for query embedding
         self.provider = GeminiProvider()
