@@ -1,0 +1,30 @@
+query_id,question,baseline_chunks,neighbor_chunks,top10_chunks,baseline_complete_answer,neighbor_complete_answer,top10_complete_answer,baseline_fact_recall,neighbor_fact_recall,top10_fact_recall,baseline_tokens,neighbor_tokens,top10_tokens
+GE-001,How long is the probation period legally capped at in Kenya?,3,6,10,0,0,1,0.6667,0.6667,1.0,1124,2249,3684
+GE-002,What are the statutory deductions on a Kenyan payslip?,3,6,10,1,1,1,1.0,1.0,1.0,1124,2249,3684
+GE-003,Can my employer terminate me without notice during probation?,3,8,10,1,1,1,1.0,1.0,1.0,1125,3000,3749
+GE-004,What is the minimum wage in Kenya for someone working in Nairobi?,3,4,10,0,0,0,0.6667,0.6667,0.6667,806,1181,3430
+GE-005,What rights do I have if my employer hasn't given me a written contract after 3 months?,3,7,10,0,0,0,0.6667,0.6667,0.6667,1124,2624,3749
+GE-006,Is it true that an employer in Kenya can dock my pay for being late?,3,6,10,0,0,0,0.3333,0.6667,0.6667,1124,2249,3749
+GE-007,What is the maximum number of working hours per week in Kenya?,3,8,10,0,0,0,0.0,0.3333,0.6667,1125,2999,3748
+GE-008,What leave entitlements do I have in my first year of employment?,3,6,10,1,1,1,1.0,1.0,1.0,1124,2249,3749
+GE-009,What should I check before signing an employment contract?,3,7,10,0,0,1,0.3333,0.3333,1.0,1059,2559,3589
+GE-010,Tell me about the rules around being let go from work in Kenya,3,7,10,0,1,0,0.6667,1.0,0.6667,1125,2624,3684
+GE-011,What does Section 42 of the Employment Act say?,3,7,10,0,0,0,0.0,0.3333,0.3333,1125,2624,3749
+GE-012,How do I write a good CV for a bank job in Kenya?,3,7,10,0,0,0,0.0,0.0,0.0,1124,2624,3749
+GE-013,What government programs help young people find jobs in Kenya?,3,7,10,0,0,0,0.0,0.3333,0.3333,957,2457,3265
+GE-014,What are common signs that a job might not be real?,3,4,10,1,1,1,1.0,1.0,1.0,1037,1412,3567
+GE-015,"A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",3,4,10,0,0,1,0.3333,0.6667,1.0,1037,1412,3597
+GE-016,"I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",3,5,10,0,0,0,0.0,0.0,0.0,1124,1874,3661
+GE-017,My employer hasn't paid me for 2 months. Can I take them to court?,3,7,10,0,0,0,0.0,0.5,0.5,1124,2624,3748
+GE-018,My boss keeps making comments about my appearance. What should I do?,3,9,10,0,0,0,0.0,0.5,0.0,1124,3374,3748
+GE-019,Is it safe to share my national ID copy with a recruiter I found on Facebook?,3,4,10,0,0,0,0.0,0.0,0.0,1037,1412,3083
+GE-020,"A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",3,4,10,0,0,0,0.0,0.0,0.5,1037,1412,3604
+GE-027,What happens if I refuse the extension?,3,9,10,0,0,0,0.0,0.0,0.0,1124,3374,3749
+GE-030,Is that the same for private sector companies?,3,9,10,0,0,0,0.0,0.0,0.0,1124,3374,3429
+GE-031,"Actually, I'm more worried about the dress code. What should I wear to a tech startup?",3,7,10,0,0,0,0.0,0.0,0.0,1124,2624,3749
+GE-033,I'm thinking of leaving my bank job to start a business. How do I resign properly?,3,6,10,0,0,0,0.0,0.0,0.0,1124,2249,3653
+GE-034,What's the HELB repayment process once I start working?,3,5,10,0,0,0,0.0,0.0,0.0,1125,1874,3293
+GE-035,My employer wants me to work on public holidays without extra pay. Is that allowed?,3,9,10,0,0,0,0.0,0.0,0.0,1124,3373,3748
+GE-036,I have a job interview at Safaricom next week. How should I prepare?,3,7,10,0,0,1,0.0,0.0,1.0,1125,2625,3749
+GE-037,I want to negotiate my salary but I've never done it before. What do I actually say?,3,8,10,0,1,0,0.0,1.0,0.0,1125,2999,3654
+GE-039,My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?,3,8,10,0,1,0,0.0,1.0,0.0,1124,2999,3749

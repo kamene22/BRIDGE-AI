@@ -1,0 +1,644 @@
+{
+  "timestamp": "2026-08-14T17:56:36Z",
+  "top_k_sensitivity": {
+    "1": {
+      "recall": 0.2828,
+      "precision": 0.6207,
+      "mrr": 0.6207,
+      "fact_recall": 0.2069,
+      "complete_answer_rate": 0.069,
+      "avg_tokens": 368.8
+    },
+    "3": {
+      "recall": 0.4362,
+      "precision": 0.6207,
+      "mrr": 0.7126,
+      "fact_recall": 0.2644,
+      "complete_answer_rate": 0.1379,
+      "avg_tokens": 1093.3
+    },
+    "5": {
+      "recall": 0.5362,
+      "precision": 0.6,
+      "mrr": 0.7126,
+      "fact_recall": 0.2874,
+      "complete_answer_rate": 0.1379,
+      "avg_tokens": 1825.9
+    },
+    "10": {
+      "recall": 0.619,
+      "precision": 0.5517,
+      "mrr": 0.7253,
+      "fact_recall": 0.4483,
+      "complete_answer_rate": 0.2759,
+      "avg_tokens": 3633.1
+    }
+  },
+  "failure_category_counts": {
+    "MULTI_CHUNK_EVIDENCE_FAILURE": 3,
+    "SUCCESS": 4,
+    "CHUNK_BOUNDARY_FAILURE": 4,
+    "QUERY_FORMULATION_FAILURE": 5,
+    "CORPUS_GAP": 12,
+    "RANKING_FAILURE": 1
+  },
+  "rank_distribution": {
+    "#1": 4,
+    "#2": 0,
+    "#3": 0,
+    "#4": 0,
+    "#5": 0,
+    "#6-10": 1,
+    ">10 / Not Found": 24
+  },
+  "records": [
+    {
+      "query_id": "GE-001",
+      "question": "How long is the probation period legally capped at in Kenya?",
+      "required_facts": [
+        "probation capped at 6 months",
+        "extension must be in writing",
+        "Employment Act"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 0.6667,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "MULTI_CHUNK_EVIDENCE_FAILURE",
+      "explanation": "All facts exist in the corpus across multiple chunks, but top-3 only fetched a partial subset of chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "bridge_ai_career_handbook_expanded.md",
+        "hidden_curriculum_kenya.md",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    },
+    {
+      "query_id": "GE-002",
+      "question": "What are the statutory deductions on a Kenyan payslip?",
+      "required_facts": [
+        "PAYE income tax",
+        "NSSF pension",
+        "SHIF/SHA health contribution",
+        "net pay"
+      ],
+      "complete_answer_at_3": true,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 1.0,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "SUCCESS",
+      "explanation": "Complete answer achieved in top-3.",
+      "complete_answer_rank": 1,
+      "retrieved_sources_top3": [
+        "first_salary_financial_literacy.md",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-003",
+      "question": "Can my employer terminate me without notice during probation?",
+      "required_facts": [
+        "notice period during probation",
+        "7 days notice or pay in lieu",
+        "Employment Act"
+      ],
+      "complete_answer_at_3": true,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 1.0,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "SUCCESS",
+      "explanation": "Complete answer achieved in top-3.",
+      "complete_answer_rank": 1,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-004",
+      "question": "What is the minimum wage in Kenya for someone working in Nairobi?",
+      "required_facts": [
+        "varies by location and job category",
+        "Regulation of Wages Act",
+        "Ministry of Labour"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.6667,
+      "fact_recall_at_10": 0.6667,
+      "failure_category": "CHUNK_BOUNDARY_FAILURE",
+      "explanation": "Required facts are split across chunk boundaries (e.g. adjacent clauses).",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "kenya_minimum_wage_gazette_guide.md",
+        "kenya_minimum_wage_gazette_guide.md",
+        "kenya_minimum_wage_gazette_guide.md"
+      ]
+    },
+    {
+      "query_id": "GE-005",
+      "question": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+      "required_facts": [
+        "written contract required by law",
+        "right to written terms",
+        "Ministry of Labour"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.6667,
+      "fact_recall_at_10": 0.6667,
+      "failure_category": "CHUNK_BOUNDARY_FAILURE",
+      "explanation": "Required facts are split across chunk boundaries (e.g. adjacent clauses).",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-006",
+      "question": "Is it true that an employer in Kenya can dock my pay for being late?",
+      "required_facts": [
+        "wage deductions must be authorized",
+        "limited lawful grounds",
+        "Employment Act"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.3333,
+      "fact_recall_at_10": 0.6667,
+      "failure_category": "CHUNK_BOUNDARY_FAILURE",
+      "explanation": "Required facts are split across chunk boundaries (e.g. adjacent clauses).",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-007",
+      "question": "What is the maximum number of working hours per week in Kenya?",
+      "required_facts": [
+        "maximum normal working hours",
+        "overtime compensation",
+        "52 hours per week"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.6667,
+      "failure_category": "QUERY_FORMULATION_FAILURE",
+      "explanation": "Query terminology mapping requires further expansion.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-008",
+      "question": "What leave entitlements do I have in my first year of employment?",
+      "required_facts": [
+        "21 working days annual leave",
+        "sick leave entitlement",
+        "maternity/paternity leave"
+      ],
+      "complete_answer_at_3": true,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 1.0,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "SUCCESS",
+      "explanation": "Complete answer achieved in top-3.",
+      "complete_answer_rank": 1,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-009",
+      "question": "What should I check before signing an employment contract?",
+      "required_facts": [
+        "check salary and pay date",
+        "check probation clause duration",
+        "confirm job title and duties"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 0.3333,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "MULTI_CHUNK_EVIDENCE_FAILURE",
+      "explanation": "All facts exist in the corpus across multiple chunks, but top-3 only fetched a partial subset of chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "hidden_curriculum_kenya.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-010",
+      "question": "Tell me about the rules around being let go from work in Kenya",
+      "required_facts": [
+        "employer needs valid reason",
+        "written notice or pay in lieu",
+        "procedural hearing requirement"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.6667,
+      "fact_recall_at_10": 0.6667,
+      "failure_category": "CHUNK_BOUNDARY_FAILURE",
+      "explanation": "Required facts are split across chunk boundaries (e.g. adjacent clauses).",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-011",
+      "question": "What does Section 42 of the Employment Act say?",
+      "required_facts": [
+        "probation extension rules",
+        "written consent required",
+        "maximum cap"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.3333,
+      "failure_category": "QUERY_FORMULATION_FAILURE",
+      "explanation": "Query terminology mapping requires further expansion.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-012",
+      "question": "How do I write a good CV for a bank job in Kenya?",
+      "required_facts": [
+        "inform manager/recipient promptly",
+        "send concise written correction",
+        "avoid panic"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "BrighterMonday_Job_Search_Advice_RAG_Corpus.pdf",
+        "bridge_ai_career_handbook_expanded.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-013",
+      "question": "What government programs help young people find jobs in Kenya?",
+      "required_facts": [
+        "align on first 30-90 day priorities",
+        "ask about communication preferences",
+        "prepare specific questions"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.3333,
+      "failure_category": "QUERY_FORMULATION_FAILURE",
+      "explanation": "Query terminology mapping requires further expansion.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "nea_career_services_guide.md",
+        "job_scam_red_flags.md",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    },
+    {
+      "query_id": "GE-014",
+      "question": "What are common signs that a job might not be real?",
+      "required_facts": [
+        "never pay upfront fees for hiring",
+        "verify employer domain/office",
+        "common red flags in Kenya"
+      ],
+      "complete_answer_at_3": true,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 1.0,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "SUCCESS",
+      "explanation": "Complete answer achieved in top-3.",
+      "complete_answer_rank": 1,
+      "retrieved_sources_top3": [
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-015",
+      "question": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+      "required_facts": [
+        "free government digital skills portal",
+        "online work opportunities",
+        "no payment required"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 0.3333,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "MULTI_CHUNK_EVIDENCE_FAILURE",
+      "explanation": "All facts exist in the corpus across multiple chunks, but top-3 only fetched a partial subset of chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-016",
+      "question": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+      "required_facts": [
+        "probation maximum limits",
+        "written agreement for extension"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md",
+        "BrighterMonday_Job_Search_Advice_RAG_Corpus.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-017",
+      "question": "My employer hasn't paid me for 2 months. Can I take them to court?",
+      "required_facts": [
+        "rights when declining extension",
+        "notice terms apply"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.5,
+      "failure_category": "QUERY_FORMULATION_FAILURE",
+      "explanation": "Query terminology mapping requires further expansion.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-018",
+      "question": "My boss keeps making comments about my appearance. What should I do?",
+      "required_facts": [
+        "polite follow-up nudge",
+        "proactive status update"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    },
+    {
+      "query_id": "GE-019",
+      "question": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+      "required_facts": [
+        "wait 24-48 hours",
+        "send brief professional follow-up"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-020",
+      "question": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+      "required_facts": [
+        "corporate bank requires formal attire",
+        "startup is smart casual"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.5,
+      "failure_category": "QUERY_FORMULATION_FAILURE",
+      "explanation": "Query terminology mapping requires further expansion.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-027",
+      "question": "What happens if I refuse the extension?",
+      "required_facts": [
+        "research market benchmarks",
+        "focus on value and skills"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-030",
+      "question": "Is that the same for private sector companies?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-031",
+      "question": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "hidden_curriculum_kenya.md",
+        "bridge_ai_career_handbook_expanded.md",
+        "hidden_curriculum_kenya.md"
+      ]
+    },
+    {
+      "query_id": "GE-033",
+      "question": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "bridge_ai_career_handbook_expanded.md",
+        "bridge_ai_career_handbook_expanded.md",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    },
+    {
+      "query_id": "GE-034",
+      "question": "What's the HELB repayment process once I start working?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "helb_repayment_compliance_guide.md",
+        "helb_repayment_compliance_guide.md",
+        "first_salary_financial_literacy.md"
+      ]
+    },
+    {
+      "query_id": "GE-035",
+      "question": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "Employment Act.pdf",
+        "Employment Act.pdf",
+        "Employment Act.pdf"
+      ]
+    },
+    {
+      "query_id": "GE-036",
+      "question": "I have a job interview at Safaricom next week. How should I prepare?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": true,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 1.0,
+      "failure_category": "RANKING_FAILURE",
+      "explanation": "Complete answer chunk exists at rank #10, but top-3 omitted it.",
+      "complete_answer_rank": 10,
+      "retrieved_sources_top3": [
+        "nea_career_services_guide.md",
+        "BrighterMonday_Job_Search_Advice_RAG_Corpus.pdf",
+        "job_scam_red_flags.md"
+      ]
+    },
+    {
+      "query_id": "GE-037",
+      "question": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "hidden_curriculum_kenya.md",
+        "BrighterMonday_Job_Search_Advice_RAG_Corpus.pdf",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    },
+    {
+      "query_id": "GE-039",
+      "question": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+      "required_facts": [
+        "relevant guidance"
+      ],
+      "complete_answer_at_3": false,
+      "complete_answer_at_10": false,
+      "fact_recall_at_3": 0.0,
+      "fact_recall_at_10": 0.0,
+      "failure_category": "CORPUS_GAP",
+      "explanation": "Required facts do not exist in retrieved top-10 chunks.",
+      "complete_answer_rank": 0,
+      "retrieved_sources_top3": [
+        "bridge_ai_career_handbook_expanded.md",
+        "bridge_ai_career_handbook_expanded.md",
+        "bridge_ai_career_handbook_expanded.md"
+      ]
+    }
+  ]
+}

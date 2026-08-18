@@ -1,0 +1,117 @@
+query_id,config,question,recall_at_1,recall_at_3,recall_at_5,precision_at_3,precision_at_5,mrr,facts_required,facts_found,fact_recall,complete_answer,answer_bearing_rate,semantic_only_match_rate,context_tokens,context_chars,embedding_latency_ms,db_latency_ms,total_latency_ms
+GE-001,exp_chunks_500_75,How long is the probation period legally capped at in Kenya?,0.4,0.4,0.4,1.0,1.0,1.0,3,1,0.3333,0,0.0,1.0,375,1500,1182.91,1327.3,2510.22
+GE-002,exp_chunks_500_75,What are the statutory deductions on a Kenyan payslip?,0.8333,0.8333,0.8333,1.0,1.0,1.0,4,3,0.75,0,1.0,0.0,374,1498,521.5,15.04,536.54
+GE-003,exp_chunks_500_75,Can my employer terminate me without notice during probation?,0.8,0.8,0.8,0.6667,0.8,1.0,3,3,1.0,1,0.6667,0.3333,278,1113,553.19,9.64,562.83
+GE-004,exp_chunks_500_75,What is the minimum wage in Kenya for someone working in Nairobi?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,374,1499,526.11,10.39,536.5
+GE-005,exp_chunks_500_75,What rights do I have if my employer hasn't given me a written contract after 3 months?,0.0,0.5,0.5,0.3333,0.6,0.3333,3,0,0.0,0,0.0,0.6667,278,1114,519.47,16.15,535.63
+GE-006,exp_chunks_500_75,Is it true that an employer in Kenya can dock my pay for being late?,0.4,0.6,0.6,0.6667,0.6,1.0,3,1,0.3333,0,0.3333,0.3333,375,1500,523.43,26.55,550.16
+GE-007,exp_chunks_500_75,What is the maximum number of working hours per week in Kenya?,0.0,0.4,0.4,0.3333,0.2,0.5,3,1,0.3333,0,0.0,1.0,374,1499,544.9,7.49,552.4
+GE-008,exp_chunks_500_75,What leave entitlements do I have in my first year of employment?,0.4,0.4,0.4,1.0,1.0,1.0,3,1,0.3333,0,1.0,0.0,374,1499,523.53,5.9,529.43
+GE-009,exp_chunks_500_75,What should I check before signing an employment contract?,0.2,0.6,0.6,0.6667,0.6,1.0,3,0,0.0,0,0.0,0.6667,277,1111,532.16,5.72,537.88
+GE-010,exp_chunks_500_75,Tell me about the rules around being let go from work in Kenya,0.2,0.4,0.4,1.0,0.8,1.0,3,0,0.0,0,0.0,1.0,374,1498,527.74,5.69,533.43
+GE-011,exp_chunks_500_75,What does Section 42 of the Employment Act say?,0.0,0.25,0.25,0.3333,0.4,0.3333,3,0,0.0,0,0.0,1.0,374,1499,540.49,9.02,549.52
+GE-012,exp_chunks_500_75,How do I write a good CV for a bank job in Kenya?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,375,1500,507.28,8.12,515.4
+GE-013,exp_chunks_500_75,What government programs help young people find jobs in Kenya?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,370,1480,553.38,31.42,584.8
+GE-014,exp_chunks_500_75,What are common signs that a job might not be real?,0.2,0.2,0.2,0.6667,0.8,1.0,3,2,0.6667,0,0.6667,0.3333,374,1499,687.5,6.89,694.4
+GE-015,exp_chunks_500_75,"A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",0.2,0.2,0.2,0.3333,0.2,1.0,3,0,0.0,0,0.0,0.3333,375,1500,619.72,18.05,637.78
+GE-016,exp_chunks_500_75,"I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,374,1499,772.74,33.75,806.5
+GE-017,exp_chunks_500_75,My employer hasn't paid me for 2 months. Can I take them to court?,0.0,0.0,0.25,0.0,0.2,0.2,2,0,0.0,0,0.0,1.0,374,1499,538.63,18.05,556.69
+GE-018,exp_chunks_500_75,My boss keeps making comments about my appearance. What should I do?,0.2,0.4,0.4,0.6667,0.6,1.0,2,0,0.0,0,0.0,0.6667,374,1498,505.98,17.39,523.38
+GE-019,exp_chunks_500_75,Is it safe to share my national ID copy with a recruiter I found on Facebook?,0.2,0.2,0.2,0.3333,0.2,1.0,2,0,0.0,0,0.0,0.3333,374,1498,559.64,11.68,571.32
+GE-020,exp_chunks_500_75,"A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",0.0,0.2,0.2,0.3333,0.2,0.3333,2,0,0.0,0,0.0,0.3333,374,1499,498.29,8.07,506.36
+GE-027,exp_chunks_500_75,What happens if I refuse the extension?,0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,278,1113,573.19,5.01,578.21
+GE-030,exp_chunks_500_75,Is that the same for private sector companies?,0.0,0.3333,0.3333,0.3333,0.2,0.3333,1,0,0.0,0,0.0,0.3333,263,1055,467.24,5.28,472.52
+GE-031,exp_chunks_500_75,"Actually, I'm more worried about the dress code. What should I wear to a tech startup?",0.3333,0.6667,0.6667,0.6667,0.4,1.0,1,0,0.0,0,0.0,0.6667,374,1497,633.27,8.85,642.13
+GE-033,exp_chunks_500_75,I'm thinking of leaving my bank job to start a business. How do I resign properly?,0.0,0.0,0.3333,0.0,0.4,0.25,1,0,0.0,0,0.0,1.0,374,1498,529.5,15.85,545.36
+GE-034,exp_chunks_500_75,What's the HELB repayment process once I start working?,0.3333,0.3333,0.3333,0.6667,0.6,1.0,1,0,0.0,0,0.0,0.6667,374,1499,504.24,14.48,518.72
+GE-035,exp_chunks_500_75,My employer wants me to work on public holidays without extra pay. Is that allowed?,0.0,0.0,0.0,0.0,0.0,0.0,1,0,0.0,0,0.0,0.0,374,1499,538.45,13.55,552.0
+GE-036,exp_chunks_500_75,I have a job interview at Safaricom next week. How should I prepare?,0.0,0.3333,0.6667,0.6667,0.6,0.5,1,0,0.0,0,0.0,0.6667,374,1499,569.04,7.25,576.3
+GE-037,exp_chunks_500_75,I want to negotiate my salary but I've never done it before. What do I actually say?,0.0,0.3333,0.3333,0.3333,0.2,0.3333,1,0,0.0,0,0.0,1.0,374,1498,677.52,22.33,699.85
+GE-039,exp_chunks_500_75,My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?,0.0,0.0,0.3333,0.0,0.2,0.25,1,0,0.0,0,0.0,0.6667,278,1113,487.69,7.44,495.13
+GE-001,exp_chunks_800_100,How long is the probation period legally capped at in Kenya?,0.4,0.4,0.4,1.0,0.8,1.0,3,1,0.3333,0,0.3333,0.6667,600,2400,561.71,589.49,1151.2
+GE-002,exp_chunks_800_100,What are the statutory deductions on a Kenyan payslip?,0.5,0.8333,0.8333,1.0,1.0,1.0,4,4,1.0,1,1.0,0.0,560,2240,428.83,8.92,437.75
+GE-003,exp_chunks_800_100,Can my employer terminate me without notice during probation?,0.8,0.8,0.8,1.0,1.0,1.0,3,3,1.0,1,1.0,0.0,600,2400,598.65,6.69,605.34
+GE-004,exp_chunks_800_100,What is the minimum wage in Kenya for someone working in Nairobi?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,600,2400,411.38,14.13,425.51
+GE-005,exp_chunks_800_100,What rights do I have if my employer hasn't given me a written contract after 3 months?,0.25,0.25,0.5,0.3333,0.4,1.0,3,2,0.6667,0,0.0,1.0,599,2399,644.59,30.86,675.45
+GE-006,exp_chunks_800_100,Is it true that an employer in Kenya can dock my pay for being late?,0.4,0.6,0.6,0.6667,0.8,1.0,3,1,0.3333,0,1.0,0.0,599,2397,467.19,18.7,485.89
+GE-007,exp_chunks_800_100,What is the maximum number of working hours per week in Kenya?,0.0,0.4,0.4,0.6667,0.4,0.5,3,0,0.0,0,0.0,1.0,599,2398,647.57,35.7,683.28
+GE-008,exp_chunks_800_100,What leave entitlements do I have in my first year of employment?,0.6,0.6,0.6,1.0,1.0,1.0,3,1,0.3333,0,0.6667,0.3333,599,2399,485.84,14.77,500.61
+GE-009,exp_chunks_800_100,What should I check before signing an employment contract?,0.2,0.6,0.6,1.0,1.0,1.0,3,1,0.3333,0,0.0,1.0,559,2239,595.91,39.08,635.0
+GE-010,exp_chunks_800_100,Tell me about the rules around being let go from work in Kenya,0.2,0.2,0.2,0.6667,0.4,1.0,3,0,0.0,0,0.0,1.0,600,2400,492.79,10.01,502.81
+GE-011,exp_chunks_800_100,What does Section 42 of the Employment Act say?,0.25,0.5,0.5,0.6667,0.4,1.0,3,0,0.0,0,0.0,1.0,599,2399,487.58,7.83,495.41
+GE-012,exp_chunks_800_100,How do I write a good CV for a bank job in Kenya?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,600,2400,529.14,7.51,536.65
+GE-013,exp_chunks_800_100,What government programs help young people find jobs in Kenya?,0.2,0.2,0.2,0.3333,0.2,1.0,3,0,0.0,0,0.0,0.3333,532,2128,492.07,7.82,499.89
+GE-014,exp_chunks_800_100,What are common signs that a job might not be real?,0.4,0.4,0.4,1.0,1.0,1.0,3,2,0.6667,0,0.6667,0.3333,599,2399,594.65,11.49,606.14
+GE-015,exp_chunks_800_100,"A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",0.0,0.2,0.8,0.3333,0.4,0.5,3,1,0.3333,0,0.0,0.3333,600,2400,433.13,11.6,444.74
+GE-016,exp_chunks_800_100,"I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,599,2398,577.29,6.26,583.55
+GE-017,exp_chunks_800_100,My employer hasn't paid me for 2 months. Can I take them to court?,0.0,0.0,0.25,0.0,0.2,0.25,2,0,0.0,0,0.0,1.0,599,2398,468.03,6.21,474.25
+GE-018,exp_chunks_800_100,My boss keeps making comments about my appearance. What should I do?,0.2,0.2,0.2,0.3333,0.4,1.0,2,0,0.0,0,0.0,0.3333,599,2398,619.17,8.75,627.92
+GE-019,exp_chunks_800_100,Is it safe to share my national ID copy with a recruiter I found on Facebook?,0.0,0.2,0.2,0.3333,0.4,0.5,2,0,0.0,0,0.0,0.3333,599,2399,493.19,6.22,499.41
+GE-020,exp_chunks_800_100,"A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",0.0,0.2,0.2,0.3333,0.2,0.3333,2,0,0.0,0,0.0,0.3333,467,1869,598.91,6.79,605.7
+GE-027,exp_chunks_800_100,What happens if I refuse the extension?,0.0,0.0,0.25,0.0,0.2,0.2,2,0,0.0,0,0.0,0.0,600,2400,521.64,7.99,529.63
+GE-030,exp_chunks_800_100,Is that the same for private sector companies?,0.0,0.0,0.3333,0.0,0.2,0.25,1,0,0.0,0,0.0,0.0,599,2399,521.92,11.37,533.3
+GE-031,exp_chunks_800_100,"Actually, I'm more worried about the dress code. What should I wear to a tech startup?",0.6667,0.6667,1.0,0.3333,0.4,1.0,1,0,0.0,0,0.0,1.0,599,2397,549.64,18.48,568.12
+GE-033,exp_chunks_800_100,I'm thinking of leaving my bank job to start a business. How do I resign properly?,0.0,0.3333,0.3333,0.3333,0.2,0.5,1,0,0.0,0,0.0,1.0,599,2398,508.56,15.64,524.21
+GE-034,exp_chunks_800_100,What's the HELB repayment process once I start working?,0.3333,0.3333,0.3333,0.6667,0.6,1.0,1,0,0.0,0,0.0,0.6667,600,2400,551.55,11.83,563.38
+GE-035,exp_chunks_800_100,My employer wants me to work on public holidays without extra pay. Is that allowed?,0.0,0.0,0.3333,0.0,0.2,0.2,1,0,0.0,0,0.0,0.0,599,2399,442.72,12.89,455.61
+GE-036,exp_chunks_800_100,I have a job interview at Safaricom next week. How should I prepare?,0.0,0.6667,0.6667,0.6667,0.6,0.5,1,0,0.0,0,0.0,0.6667,599,2396,614.47,10.61,625.08
+GE-037,exp_chunks_800_100,I want to negotiate my salary but I've never done it before. What do I actually say?,0.0,0.0,0.3333,0.0,0.2,0.25,1,0,0.0,0,0.0,1.0,599,2397,457.56,5.65,463.21
+GE-039,exp_chunks_800_100,My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?,0.3333,0.6667,1.0,0.6667,0.6,1.0,1,0,0.0,0,0.0,1.0,599,2398,566.82,6.21,573.03
+GE-001,exp_chunks_1100_150,How long is the probation period legally capped at in Kenya?,0.4,0.4,0.4,0.3333,0.6,1.0,3,1,0.3333,0,0.3333,0.6667,824,3299,468.47,305.17,773.64
+GE-002,exp_chunks_1100_150,What are the statutory deductions on a Kenyan payslip?,0.6667,0.8333,0.8333,1.0,1.0,1.0,4,4,1.0,1,0.6667,0.3333,825,3300,465.52,13.01,478.54
+GE-003,exp_chunks_1100_150,Can my employer terminate me without notice during probation?,0.4,0.8,0.8,1.0,1.0,1.0,3,3,1.0,1,1.0,0.0,824,3299,642.29,6.19,648.48
+GE-004,exp_chunks_1100_150,What is the minimum wage in Kenya for someone working in Nairobi?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.3333,825,3300,476.59,11.95,488.54
+GE-005,exp_chunks_1100_150,What rights do I have if my employer hasn't given me a written contract after 3 months?,0.0,0.0,0.0,0.0,0.0,0.0,3,1,0.3333,0,0.0,1.0,824,3298,629.31,44.21,673.53
+GE-006,exp_chunks_1100_150,Is it true that an employer in Kenya can dock my pay for being late?,0.4,0.4,0.4,0.6667,0.8,1.0,3,1,0.3333,0,0.3333,0.3333,824,3299,468.17,14.1,482.27
+GE-007,exp_chunks_1100_150,What is the maximum number of working hours per week in Kenya?,0.0,0.0,0.2,0.0,0.2,0.25,3,0,0.0,0,0.0,1.0,824,3299,572.43,6.38,578.81
+GE-008,exp_chunks_1100_150,What leave entitlements do I have in my first year of employment?,0.6,0.8,0.8,1.0,1.0,1.0,3,2,0.6667,0,0.6667,0.3333,824,3298,438.26,6.46,444.72
+GE-009,exp_chunks_1100_150,What should I check before signing an employment contract?,0.6,0.6,0.6,1.0,1.0,1.0,3,1,0.3333,0,0.0,1.0,672,2689,616.82,6.87,623.69
+GE-010,exp_chunks_1100_150,Tell me about the rules around being let go from work in Kenya,0.2,0.4,0.6,1.0,1.0,1.0,3,1,0.3333,0,0.3333,0.6667,824,3299,471.14,4.89,476.04
+GE-011,exp_chunks_1100_150,What does Section 42 of the Employment Act say?,0.25,0.25,0.25,0.3333,0.2,1.0,3,0,0.0,0,0.0,1.0,824,3299,604.04,5.38,609.42
+GE-012,exp_chunks_1100_150,How do I write a good CV for a bank job in Kenya?,0.4,0.4,0.4,0.3333,0.2,1.0,3,0,0.0,0,0.0,0.3333,823,3295,563.12,5.65,568.77
+GE-013,exp_chunks_1100_150,What government programs help young people find jobs in Kenya?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.0,782,3130,481.25,5.62,486.87
+GE-014,exp_chunks_1100_150,What are common signs that a job might not be real?,0.2,0.2,0.2,1.0,1.0,1.0,3,3,1.0,1,0.3333,0.6667,824,3298,715.12,5.24,720.37
+GE-015,exp_chunks_1100_150,"A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",0.2,0.6,1.0,0.6667,0.8,1.0,3,0,0.0,0,0.0,0.6667,824,3298,510.19,4.57,514.76
+GE-016,exp_chunks_1100_150,"I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,824,3297,609.54,5.74,615.28
+GE-017,exp_chunks_1100_150,My employer hasn't paid me for 2 months. Can I take them to court?,0.0,0.0,0.25,0.0,0.2,0.25,2,0,0.0,0,0.0,1.0,824,3299,605.63,5.19,610.82
+GE-018,exp_chunks_1100_150,My boss keeps making comments about my appearance. What should I do?,0.0,0.2,0.2,0.3333,0.4,0.3333,2,0,0.0,0,0.0,0.3333,824,3299,738.45,4.88,743.34
+GE-019,exp_chunks_1100_150,Is it safe to share my national ID copy with a recruiter I found on Facebook?,0.0,0.2,0.2,0.3333,0.6,0.3333,2,0,0.0,0,0.0,0.3333,824,3298,1369.85,9.0,1378.85
+GE-020,exp_chunks_1100_150,"A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",0.0,0.0,0.4,0.0,0.2,0.2,2,0,0.0,0,0.0,0.0,654,2618,507.16,12.04,519.21
+GE-027,exp_chunks_1100_150,What happens if I refuse the extension?,0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,824,3299,536.42,10.8,547.22
+GE-030,exp_chunks_1100_150,Is that the same for private sector companies?,0.3333,0.3333,0.3333,0.6667,0.6,1.0,1,0,0.0,0,0.0,0.6667,824,3299,496.67,5.36,502.03
+GE-031,exp_chunks_1100_150,"Actually, I'm more worried about the dress code. What should I wear to a tech startup?",0.3333,1.0,1.0,0.6667,0.8,1.0,1,0,0.0,0,0.0,1.0,824,3298,544.06,5.34,549.4
+GE-033,exp_chunks_1100_150,I'm thinking of leaving my bank job to start a business. How do I resign properly?,0.3333,0.3333,0.6667,1.0,0.8,1.0,1,0,0.0,0,0.0,1.0,824,3298,584.82,5.67,590.49
+GE-034,exp_chunks_1100_150,What's the HELB repayment process once I start working?,0.3333,0.3333,0.6667,1.0,1.0,1.0,1,0,0.0,0,0.0,1.0,825,3300,473.33,7.55,480.89
+GE-035,exp_chunks_1100_150,My employer wants me to work on public holidays without extra pay. Is that allowed?,0.0,0.0,0.3333,0.0,0.2,0.25,1,0,0.0,0,0.0,0.0,824,3299,518.12,5.2,523.32
+GE-036,exp_chunks_1100_150,I have a job interview at Safaricom next week. How should I prepare?,0.3333,0.6667,0.6667,1.0,1.0,1.0,1,0,0.0,0,0.0,1.0,824,3299,528.8,5.47,534.27
+GE-037,exp_chunks_1100_150,I want to negotiate my salary but I've never done it before. What do I actually say?,0.0,0.3333,0.3333,0.3333,0.4,0.5,1,0,0.0,0,0.0,1.0,824,3299,512.95,5.79,518.75
+GE-039,exp_chunks_1100_150,My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?,0.3333,0.6667,0.6667,0.6667,0.8,1.0,1,0,0.0,0,0.0,0.6667,672,2689,561.38,4.87,566.25
+GE-001,exp_chunks_1500_200,How long is the probation period legally capped at in Kenya?,0.4,0.4,0.4,1.0,0.6,1.0,3,1,0.3333,0,0.6667,0.3333,1060,4240,475.68,202.29,677.97
+GE-002,exp_chunks_1500_200,What are the statutory deductions on a Kenyan payslip?,0.8333,0.8333,0.8333,1.0,1.0,1.0,4,4,1.0,1,0.6667,0.3333,1124,4499,511.96,7.7,519.67
+GE-003,exp_chunks_1500_200,Can my employer terminate me without notice during probation?,0.8,0.8,0.8,1.0,1.0,1.0,3,3,1.0,1,1.0,0.0,1125,4500,565.55,7.35,572.9
+GE-004,exp_chunks_1500_200,What is the minimum wage in Kenya for someone working in Nairobi?,0.0,0.0,0.0,0.0,0.0,0.0,3,0,0.0,0,0.0,0.3333,1125,4500,493.62,6.35,499.97
+GE-005,exp_chunks_1500_200,What rights do I have if my employer hasn't given me a written contract after 3 months?,0.25,0.25,0.75,0.3333,0.6,1.0,3,2,0.6667,0,0.3333,0.6667,1124,4499,579.23,7.75,586.98
+GE-006,exp_chunks_1500_200,Is it true that an employer in Kenya can dock my pay for being late?,0.6,0.6,0.6,1.0,0.8,1.0,3,1,0.3333,0,1.0,0.0,1124,4499,459.93,6.12,466.05
+GE-007,exp_chunks_1500_200,What is the maximum number of working hours per week in Kenya?,0.0,0.4,0.4,0.6667,0.6,0.5,3,1,0.3333,0,0.0,1.0,1125,4500,530.09,5.21,535.3
+GE-008,exp_chunks_1500_200,What leave entitlements do I have in my first year of employment?,0.8,0.8,0.8,0.3333,0.6,1.0,3,2,0.6667,0,0.3333,0.6667,1124,4497,528.89,9.64,538.56
+GE-009,exp_chunks_1500_200,What should I check before signing an employment contract?,0.2,0.6,0.6,0.6667,0.8,1.0,3,1,0.3333,0,0.3333,0.3333,1059,4239,492.28,7.94,500.22
+GE-010,exp_chunks_1500_200,Tell me about the rules around being let go from work in Kenya,0.4,0.6,0.8,1.0,1.0,1.0,3,2,0.6667,0,0.6667,0.3333,1125,4500,560.21,7.24,567.45
+GE-011,exp_chunks_1500_200,What does Section 42 of the Employment Act say?,0.25,0.25,0.5,0.3333,0.4,1.0,3,0,0.0,0,0.0,1.0,1125,4500,442.33,7.66,450.0
+GE-012,exp_chunks_1500_200,How do I write a good CV for a bank job in Kenya?,0.0,0.4,0.4,0.3333,0.4,0.3333,3,0,0.0,0,0.0,0.3333,1124,4498,394.58,6.35,400.93
+GE-013,exp_chunks_1500_200,What government programs help young people find jobs in Kenya?,0.0,0.4,0.4,0.6667,0.6,0.5,3,0,0.0,0,0.0,0.6667,957,3829,501.34,10.46,511.8
+GE-014,exp_chunks_1500_200,What are common signs that a job might not be real?,0.2,0.2,0.4,1.0,1.0,1.0,3,3,1.0,1,0.3333,0.6667,1037,4150,459.41,8.36,467.77
+GE-015,exp_chunks_1500_200,"A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",0.2,0.2,1.0,0.3333,0.4,1.0,3,1,0.3333,0,0.0,0.3333,1037,4150,586.33,10.48,596.86
+GE-016,exp_chunks_1500_200,"I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,1124,4499,778.38,19.02,797.41
+GE-017,exp_chunks_1500_200,My employer hasn't paid me for 2 months. Can I take them to court?,0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,1.0,1124,4498,476.36,16.18,492.56
+GE-018,exp_chunks_1500_200,My boss keeps making comments about my appearance. What should I do?,0.2,0.2,0.4,1.0,0.8,1.0,2,0,0.0,0,0.0,1.0,1124,4496,476.12,13.45,489.58
+GE-019,exp_chunks_1500_200,Is it safe to share my national ID copy with a recruiter I found on Facebook?,0.2,0.2,0.2,1.0,0.8,1.0,2,0,0.0,0,0.0,1.0,1037,4150,466.36,8.75,475.11
+GE-020,exp_chunks_1500_200,"A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",0.0,0.2,0.4,0.3333,0.4,0.5,2,0,0.0,0,0.0,0.3333,1037,4150,521.03,9.67,530.7
+GE-027,exp_chunks_1500_200,What happens if I refuse the extension?,0.0,0.0,0.0,0.0,0.0,0.0,2,0,0.0,0,0.0,0.0,1124,4499,485.83,10.98,496.81
+GE-030,exp_chunks_1500_200,Is that the same for private sector companies?,0.0,0.3333,0.6667,0.3333,0.4,0.5,1,0,0.0,0,0.0,0.3333,1124,4499,463.05,7.85,470.9
+GE-031,exp_chunks_1500_200,"Actually, I'm more worried about the dress code. What should I wear to a tech startup?",0.0,0.3333,1.0,0.3333,0.6,0.3333,1,0,0.0,0,0.0,0.6667,1124,4499,495.8,6.74,502.55
+GE-033,exp_chunks_1500_200,I'm thinking of leaving my bank job to start a business. How do I resign properly?,0.3333,0.3333,0.6667,0.6667,0.8,1.0,1,0,0.0,0,0.0,1.0,1124,4496,460.83,5.71,466.55
+GE-034,exp_chunks_1500_200,What's the HELB repayment process once I start working?,0.3333,0.3333,0.3333,1.0,1.0,1.0,1,0,0.0,0,0.0,1.0,1124,4499,504.45,6.56,511.01
+GE-035,exp_chunks_1500_200,My employer wants me to work on public holidays without extra pay. Is that allowed?,0.0,0.0,0.3333,0.0,0.2,0.25,1,0,0.0,0,0.0,0.0,1124,4499,698.78,15.29,714.07
+GE-036,exp_chunks_1500_200,I have a job interview at Safaricom next week. How should I prepare?,0.6667,0.6667,0.6667,1.0,1.0,1.0,1,0,0.0,0,0.0,1.0,1125,4500,489.78,32.74,522.52
+GE-037,exp_chunks_1500_200,I want to negotiate my salary but I've never done it before. What do I actually say?,0.3333,0.6667,1.0,0.6667,0.8,1.0,1,0,0.0,0,0.0,1.0,1125,4500,480.49,9.01,489.6
+GE-039,exp_chunks_1500_200,My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?,0.6667,0.6667,0.6667,0.3333,0.6,1.0,1,0,0.0,0,0.0,0.6667,1124,4499,468.68,9.38,478.1

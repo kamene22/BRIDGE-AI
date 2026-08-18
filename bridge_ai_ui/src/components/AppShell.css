@@ -1,0 +1,184 @@
+/* ═══════════════════════════════════════════════════════
+   AppShell — Main layout with header + split panes
+   ═══════════════════════════════════════════════════════ */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  z-index: 10;
+  gap: var(--space-4);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.app-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(200, 90, 50, 0.3);
+}
+
+.logo-letter {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.app-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--terracotta-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-tagline {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Mobile Tab Switcher ────────────────────────────── */
+.app-tabs-mobile {
+  display: none; /* Hidden on desktop */
+  gap: var(--space-1);
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.tab-btn:hover {
+  background: var(--bg-surface-hover);
+}
+
+.tab-active {
+  background: rgba(200, 90, 50, 0.12);
+  color: var(--terracotta-light);
+  border-color: rgba(200, 90, 50, 0.25);
+}
+
+/* ── Actions ────────────────────────────────────────── */
+.app-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.session-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.reset-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.reset-btn:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+/* ── Main Content Split ─────────────────────────────── */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-voice-pane {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.app-chat-pane {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  min-width: 0;
+}
+
+/* ── Responsive: Mobile ─────────────────────────────── */
+@media (max-width: 768px) {
+  .app-tabs-mobile {
+    display: flex;
+  }
+
+  .app-brand-text {
+    display: none;
+  }
+
+  .session-id {
+    display: none;
+  }
+
+  .app-main {
+    position: relative;
+  }
+
+  .app-voice-pane,
+  .app-chat-pane {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .app-voice-pane.pane-visible,
+  .app-chat-pane.pane-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

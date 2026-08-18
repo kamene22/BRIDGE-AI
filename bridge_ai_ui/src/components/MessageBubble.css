@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════
+   MessageBubble — Chat message with guardrail badges
+   ═══════════════════════════════════════════════════════ */
+
+.message-bubble {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  animation: slideUp var(--duration-normal) var(--ease-out);
+  max-width: 88%;
+  word-wrap: break-word;
+}
+
+/* ── Role Variants ──────────────────────────────────── */
+.message-user {
+  align-self: flex-end;
+  background: rgba(45, 106, 79, 0.12);
+  border: 1px solid rgba(45, 106, 79, 0.15);
+}
+
+.message-amani {
+  align-self: flex-start;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.message-system {
+  align-self: center;
+  background: rgba(94, 96, 114, 0.1);
+  border: 1px solid var(--border-subtle);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 100%;
+  text-align: center;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.message-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.message-user .message-role { color: var(--emerald-light); }
+.message-amani .message-role { color: var(--terracotta-light); }
+
+.message-time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ── Text ───────────────────────────────────────────── */
+.message-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.streaming-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--terracotta-light);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: pulse 0.8s ease-in-out infinite;
+}
+
+/* ── Guardrail Badges ───────────────────────────────── */
+.message-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+.badge-legal {
+  background: rgba(212, 168, 67, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+}
+
+.badge-scam {
+  background: rgba(230, 57, 70, 0.1);
+  color: var(--warning-red);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+.badge-oos {
+  background: rgba(94, 96, 114, 0.1);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ── Sources Accordion ──────────────────────────────── */
+.message-sources {
+  margin-top: var(--space-1);
+}
+
+.sources-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.sources-summary::-webkit-details-marker { display: none; }
+
+.sources-summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+details[open] .sources-summary::before {
+  transform: rotate(90deg);
+}
+
+.sources-list {
+  list-style: none;
+  padding: var(--space-2) 0 0 var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.source-item {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.source-item:last-child {
+  border-bottom: none;
+}

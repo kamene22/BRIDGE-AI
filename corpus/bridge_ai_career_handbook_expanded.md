@@ -820,15 +820,26 @@ Initiative is one of the most consistently valued early-career traits, but it ne
 
 ## 3.3 Understanding Performance Reviews and Probation
 
-- Probation periods (commonly 3–6 months in Kenya) exist to assess fit in both directions — for the employer to assess you, and for you to assess whether the role suits you.
+- Probation periods in Kenya are governed by **Section 42 of the Employment Act**. Statutory probation is capped at a maximum of **6 months**.
+- **Probation Extension Rules (Section 42):** An employer may extend probation up to a total maximum limit of 12 months, but **only with the employee's prior written consent**. An employer cannot unilaterally extend probation without a written agreement signed by the employee. Section 42 remains active, enforceable legislation in Kenya.
+- **Working Hours & Public Holiday Overtime (Section 27):** Under Section 27 and subsidiary Regulation of Wages Orders, standard maximum working hours are 52 hours per week. Overtime worked beyond normal hours is compensated at **1.5 times the basic hourly rate** on normal working days, and **2.0 times the basic hourly rate (double pay)** when working on gazetted public holidays.
+- **Right to Written Contract (Section 9):** If an employer fails to issue a written employment contract within two months of employment, the employee has a statutory right under Section 9 of the Employment Act to request a written statement of particulars, and may report non-compliance to the **Ministry of Labour and Social Protection (Labour Inspectorate)**.
 - Ask early what specific criteria will be used to assess your probation, rather than assuming.
 - Keep a simple running record of your achievements, completed projects, and positive feedback throughout the year — this makes performance review conversations far easier and more evidence-based than relying on memory.
 - Approach performance reviews as a two-way conversation: come with your own reflections and questions, not only expecting to receive a verdict passively.
 - If a review includes criticism, ask for specific, actionable examples of what improvement would look like, rather than leaving with only a vague impression of underperformance.
 
+### Source Attribution & Statutory Reference
+- **Legislation:** Employment Act (Cap. 226, Laws of Kenya), Sections 9, 27, and 42.
+- **Authority:** Ministry of Labour and Social Protection & Employment and Labour Relations Court (ELRC).
+- **Publication Date:** Laws of Kenya (Cap. 226).
+
 ### Common Questions — 3.3
 
-- What happens during probation in Kenya?
+- What happens during probation in Kenya under Section 42?
+- How long can probation legally last in Kenya, and can it be extended?
+- What are the public holiday overtime pay rules under Section 27?
+- How do I handle missing written contracts with the Ministry of Labour?
 - How do I know if I'm going to pass my probation?
 - What should I keep track of for my performance review?
 - My probation is ending soon and I'm anxious, what should I do?

@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-08-14T18:02:22Z",
+  "configurations": {
+    "Config_A_Baseline": {
+      "avg_chunks": 3.0,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.4431,
+      "recall_at_5": 0.4431,
+      "precision_at_3": 0.6092,
+      "mrr": 0.7184,
+      "fact_recall": 0.2644,
+      "complete_answer_rate": 0.1379,
+      "semantic_only_match_rate": 0.5172,
+      "context_payload": {
+        "avg_chars": 4374.8,
+        "avg_tokens": 1093.3,
+        "p50_tokens": 1124.0,
+        "p95_tokens": 1125.0
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.006,
+        "mean_embedding_ms": 573.57,
+        "mean_chroma_ms": 17.31,
+        "mean_neighbor_ms": 0.004,
+        "mean_total_ms": 590.96,
+        "p50_total_ms": 542.88,
+        "p95_total_ms": 651.16
+      }
+    },
+    "Config_B_N_plus_1": {
+      "avg_chunks": 5.2,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.4684,
+      "recall_at_5": 0.5092,
+      "precision_at_3": 0.6322,
+      "mrr": 0.7598,
+      "fact_recall": 0.3851,
+      "complete_answer_rate": 0.2069,
+      "semantic_only_match_rate": 0.5649,
+      "context_payload": {
+        "avg_chars": 7684.6,
+        "avg_tokens": 1920.8,
+        "p50_tokens": 1874.0,
+        "p95_tokens": 2250.0
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.007,
+        "mean_embedding_ms": 555.76,
+        "mean_chroma_ms": 10.9,
+        "mean_neighbor_ms": 0.04,
+        "mean_total_ms": 566.72,
+        "p50_total_ms": 538.25,
+        "p95_total_ms": 770.89
+      }
+    },
+    "Config_C_N_minus_1": {
+      "avg_chunks": 4.7,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.4264,
+      "recall_at_5": 0.523,
+      "precision_at_3": 0.6207,
+      "mrr": 0.7328,
+      "fact_recall": 0.3276,
+      "complete_answer_rate": 0.1724,
+      "semantic_only_match_rate": 0.5828,
+      "context_payload": {
+        "avg_chars": 6960.7,
+        "avg_tokens": 1739.8,
+        "p50_tokens": 1874.0,
+        "p95_tokens": 2249.0
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.007,
+        "mean_embedding_ms": 523.22,
+        "mean_chroma_ms": 13.06,
+        "mean_neighbor_ms": 0.022,
+        "mean_total_ms": 536.32,
+        "p50_total_ms": 532.1,
+        "p95_total_ms": 639.85
+      }
+    },
+    "Config_D_N_pm_1": {
+      "avg_chunks": 6.6,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.431,
+      "recall_at_5": 0.4977,
+      "precision_at_3": 0.6322,
+      "mrr": 0.7492,
+      "fact_recall": 0.4368,
+      "complete_answer_rate": 0.2414,
+      "semantic_only_match_rate": 0.5814,
+      "context_payload": {
+        "avg_chars": 9753.2,
+        "avg_tokens": 2437.9,
+        "p50_tokens": 2624.0,
+        "p95_tokens": 3374.0
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.008,
+        "mean_embedding_ms": 529.6,
+        "mean_chroma_ms": 9.47,
+        "mean_neighbor_ms": 0.022,
+        "mean_total_ms": 539.11,
+        "p50_total_ms": 468.07,
+        "p95_total_ms": 669.14
+      }
+    },
+    "Config_E_Top1_N_pm_1": {
+      "avg_chunks": 4.1,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.4034,
+      "recall_at_5": 0.4747,
+      "precision_at_3": 0.6207,
+      "mrr": 0.7443,
+      "fact_recall": 0.3103,
+      "complete_answer_rate": 0.1724,
+      "semantic_only_match_rate": 0.5236,
+      "context_payload": {
+        "avg_chars": 6029.7,
+        "avg_tokens": 1507.0,
+        "p50_tokens": 1499.0,
+        "p95_tokens": 1874.6
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.005,
+        "mean_embedding_ms": 449.64,
+        "mean_chroma_ms": 7.92,
+        "mean_neighbor_ms": 0.012,
+        "mean_total_ms": 457.58,
+        "p50_total_ms": 447.53,
+        "p95_total_ms": 513.55
+      }
+    },
+    "Config_F_Top10": {
+      "avg_chunks": 10.0,
+      "recall_at_1": 0.2943,
+      "recall_at_3": 0.4431,
+      "recall_at_5": 0.5293,
+      "precision_at_3": 0.6092,
+      "mrr": 0.7311,
+      "fact_recall": 0.4483,
+      "complete_answer_rate": 0.2759,
+      "semantic_only_match_rate": 0.5517,
+      "context_payload": {
+        "avg_chars": 14533.9,
+        "avg_tokens": 3633.1,
+        "p50_tokens": 3684.0,
+        "p95_tokens": 3749.0
+      },
+      "latencies": {
+        "mean_qexp_ms": 0.006,
+        "mean_embedding_ms": 469.28,
+        "mean_chroma_ms": 10.51,
+        "mean_neighbor_ms": 0.009,
+        "mean_total_ms": 479.82,
+        "p50_total_ms": 467.36,
+        "p95_total_ms": 597.4
+      }
+    }
+  }
+}

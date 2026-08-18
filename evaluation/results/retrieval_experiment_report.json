@@ -1,0 +1,2046 @@
+{
+  "timestamp": "2026-08-13T21:44:45Z",
+  "total_test_cases": 29,
+  "experiments": [
+    {
+      "config_name": "Baseline (Soft Gating)",
+      "metrics": {
+        "mean_recall_at_1": 0.0655,
+        "mean_recall_at_3": 0.1201,
+        "mean_recall_at_5": 0.1201,
+        "mean_precision_at_3": 0.1264,
+        "mean_precision_at_5": 0.1264,
+        "mean_mrr": 0.1494,
+        "mean_evidence_coverage": 0.069,
+        "mean_latency_ms": 182.91,
+        "p95_latency_ms": 689.1
+      },
+      "case_count": 29,
+      "case_details": [
+        {
+          "test_id": "GE-001",
+          "question": "How long is the probation period legally capped at in Kenya?",
+          "search_query": "How long is the probation period legally capped at in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 2729.39,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-002",
+          "question": "What are the statutory deductions on a Kenyan payslip?",
+          "search_query": "What are the statutory deductions on a Kenyan payslip?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-003",
+          "question": "Can my employer terminate me without notice during probation?",
+          "search_query": "Can my employer terminate me without notice during probation?",
+          "retrieved_count": 3,
+          "latency_ms": 682.45,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-004",
+          "question": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "search_query": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "retrieved_count": 0,
+          "latency_ms": 0.0,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-005",
+          "question": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "search_query": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "retrieved_count": 3,
+          "latency_ms": 612.16,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-006",
+          "question": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "search_query": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-007",
+          "question": "What is the maximum number of working hours per week in Kenya?",
+          "search_query": "What is the maximum number of working hours per week in Kenya?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-008",
+          "question": "What leave entitlements do I have in my first year of employment?",
+          "search_query": "What leave entitlements do I have in my first year of employment?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-009",
+          "question": "What should I check before signing an employment contract?",
+          "search_query": "What should I check before signing an employment contract?",
+          "retrieved_count": 3,
+          "latency_ms": 693.53,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-010",
+          "question": "Tell me about the rules around being let go from work in Kenya",
+          "search_query": "Tell me about the rules around being let go from work in Kenya",
+          "retrieved_count": 0,
+          "latency_ms": 0.02,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-011",
+          "question": "What does Section 42 of the Employment Act say?",
+          "search_query": "What does Section 42 of the Employment Act say?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-012",
+          "question": "How do I write a good CV for a bank job in Kenya?",
+          "search_query": "How do I write a good CV for a bank job in Kenya?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-013",
+          "question": "What government programs help young people find jobs in Kenya?",
+          "search_query": "What government programs help young people find jobs in Kenya?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-014",
+          "question": "What are common signs that a job might not be real?",
+          "search_query": "What are common signs that a job might not be real?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-015",
+          "question": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "search_query": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-016",
+          "question": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "search_query": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-017",
+          "question": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "search_query": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-018",
+          "question": "My boss keeps making comments about my appearance. What should I do?",
+          "search_query": "My boss keeps making comments about my appearance. What should I do?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-019",
+          "question": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "search_query": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-020",
+          "question": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "search_query": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-027",
+          "question": "What happens if I refuse the extension?",
+          "search_query": "What happens if I refuse the extension?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-030",
+          "question": "Is that the same for private sector companies?",
+          "search_query": "Is that the same for private sector companies?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-031",
+          "question": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "search_query": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-033",
+          "question": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "search_query": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-034",
+          "question": "What's the HELB repayment process once I start working?",
+          "search_query": "What's the HELB repayment process once I start working?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-035",
+          "question": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "search_query": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-036",
+          "question": "I have a job interview at Safaricom next week. How should I prepare?",
+          "search_query": "I have a job interview at Safaricom next week. How should I prepare?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-037",
+          "question": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "search_query": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "retrieved_count": 0,
+          "latency_ms": 0.01,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-039",
+          "question": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "search_query": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "retrieved_count": 3,
+          "latency_ms": 586.67,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.3333,
+            "precision_at_5": 0.3333,
+            "mrr": 0.3333,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 3
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "Exp 1: Mandatory Grounding Policy",
+      "metrics": {
+        "mean_recall_at_1": 0.2494,
+        "mean_recall_at_3": 0.3776,
+        "mean_recall_at_5": 0.3776,
+        "mean_precision_at_3": 0.5287,
+        "mean_precision_at_5": 0.5287,
+        "mean_mrr": 0.6724,
+        "mean_evidence_coverage": 0.2356,
+        "mean_latency_ms": 831.09,
+        "p95_latency_ms": 1849.04
+      },
+      "case_count": 29,
+      "case_details": [
+        {
+          "test_id": "GE-001",
+          "question": "How long is the probation period legally capped at in Kenya?",
+          "search_query": "How long is the probation period legally capped at in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 1496.63,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-002",
+          "question": "What are the statutory deductions on a Kenyan payslip?",
+          "search_query": "What are the statutory deductions on a Kenyan payslip?",
+          "retrieved_count": 3,
+          "latency_ms": 586.82,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.8333,
+            "recall_at_5": 0.8333,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-003",
+          "question": "Can my employer terminate me without notice during probation?",
+          "search_query": "Can my employer terminate me without notice during probation?",
+          "retrieved_count": 3,
+          "latency_ms": 651.32,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-004",
+          "question": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "search_query": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "retrieved_count": 3,
+          "latency_ms": 583.79,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-005",
+          "question": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "search_query": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "retrieved_count": 3,
+          "latency_ms": 578.59,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-006",
+          "question": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "search_query": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "retrieved_count": 3,
+          "latency_ms": 664.77,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-007",
+          "question": "What is the maximum number of working hours per week in Kenya?",
+          "search_query": "What is the maximum number of working hours per week in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 583.04,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-008",
+          "question": "What leave entitlements do I have in my first year of employment?",
+          "search_query": "What leave entitlements do I have in my first year of employment?",
+          "retrieved_count": 2,
+          "latency_ms": 601.14,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-009",
+          "question": "What should I check before signing an employment contract?",
+          "search_query": "What should I check before signing an employment contract?",
+          "retrieved_count": 3,
+          "latency_ms": 545.89,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-010",
+          "question": "Tell me about the rules around being let go from work in Kenya",
+          "search_query": "Tell me about the rules around being let go from work in Kenya",
+          "retrieved_count": 2,
+          "latency_ms": 707.82,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-011",
+          "question": "What does Section 42 of the Employment Act say?",
+          "search_query": "What does Section 42 of the Employment Act say?",
+          "retrieved_count": 3,
+          "latency_ms": 689.47,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-012",
+          "question": "How do I write a good CV for a bank job in Kenya?",
+          "search_query": "How do I write a good CV for a bank job in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 571.55,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-013",
+          "question": "What government programs help young people find jobs in Kenya?",
+          "search_query": "What government programs help young people find jobs in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 650.76,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-014",
+          "question": "What are common signs that a job might not be real?",
+          "search_query": "What are common signs that a job might not be real?",
+          "retrieved_count": 2,
+          "latency_ms": 615.11,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-015",
+          "question": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "search_query": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "retrieved_count": 2,
+          "latency_ms": 1412.66,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-016",
+          "question": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "search_query": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "retrieved_count": 2,
+          "latency_ms": 685.42,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-017",
+          "question": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "search_query": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "retrieved_count": 3,
+          "latency_ms": 551.99,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.5,
+            "recall_at_5": 0.5,
+            "precision_at_3": 0.3333,
+            "precision_at_5": 0.3333,
+            "mrr": 1.0,
+            "evidence_coverage": 0.5,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-018",
+          "question": "My boss keeps making comments about my appearance. What should I do?",
+          "search_query": "My boss keeps making comments about my appearance. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 2560.96,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.4,
+            "recall_at_5": 0.4,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-019",
+          "question": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "search_query": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "retrieved_count": 2,
+          "latency_ms": 903.31,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-020",
+          "question": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "search_query": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "retrieved_count": 2,
+          "latency_ms": 1069.27,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-027",
+          "question": "What happens if I refuse the extension?",
+          "search_query": "What happens if I refuse the extension?",
+          "retrieved_count": 0,
+          "latency_ms": 545.21,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 0
+          }
+        },
+        {
+          "test_id": "GE-030",
+          "question": "Is that the same for private sector companies?",
+          "search_query": "Is that the same for private sector companies?",
+          "retrieved_count": 2,
+          "latency_ms": 1132.58,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-031",
+          "question": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "search_query": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "retrieved_count": 2,
+          "latency_ms": 2083.98,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-033",
+          "question": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "search_query": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "retrieved_count": 2,
+          "latency_ms": 608.27,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-034",
+          "question": "What's the HELB repayment process once I start working?",
+          "search_query": "What's the HELB repayment process once I start working?",
+          "retrieved_count": 2,
+          "latency_ms": 707.32,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-035",
+          "question": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "search_query": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "retrieved_count": 2,
+          "latency_ms": 630.31,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-036",
+          "question": "I have a job interview at Safaricom next week. How should I prepare?",
+          "search_query": "I have a job interview at Safaricom next week. How should I prepare?",
+          "retrieved_count": 2,
+          "latency_ms": 545.18,
+          "metrics": {
+            "recall_at_1": 0.6667,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-037",
+          "question": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "search_query": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "retrieved_count": 2,
+          "latency_ms": 547.25,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-039",
+          "question": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "search_query": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 591.29,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "Exp 2: Mandatory Gating + Contextual Rewriting",
+      "metrics": {
+        "mean_recall_at_1": 0.2609,
+        "mean_recall_at_3": 0.3891,
+        "mean_recall_at_5": 0.3891,
+        "mean_precision_at_3": 0.546,
+        "mean_precision_at_5": 0.546,
+        "mean_mrr": 0.7069,
+        "mean_evidence_coverage": 0.2356,
+        "mean_latency_ms": 1287.15,
+        "p95_latency_ms": 3570.66
+      },
+      "case_count": 29,
+      "case_details": [
+        {
+          "test_id": "GE-001",
+          "question": "How long is the probation period legally capped at in Kenya?",
+          "search_query": "How long is the probation period legally capped at in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 1327.09,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-002",
+          "question": "What are the statutory deductions on a Kenyan payslip?",
+          "search_query": "What are the statutory deductions on a Kenyan payslip?",
+          "retrieved_count": 3,
+          "latency_ms": 706.29,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.8333,
+            "recall_at_5": 0.8333,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-003",
+          "question": "Can my employer terminate me without notice during probation?",
+          "search_query": "Can my employer terminate me without notice during probation?",
+          "retrieved_count": 3,
+          "latency_ms": 672.41,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-004",
+          "question": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "search_query": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "retrieved_count": 3,
+          "latency_ms": 674.15,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-005",
+          "question": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "search_query": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "retrieved_count": 3,
+          "latency_ms": 668.55,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-006",
+          "question": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "search_query": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "retrieved_count": 3,
+          "latency_ms": 788.55,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-007",
+          "question": "What is the maximum number of working hours per week in Kenya?",
+          "search_query": "What is the maximum number of working hours per week in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 698.7,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-008",
+          "question": "What leave entitlements do I have in my first year of employment?",
+          "search_query": "What leave entitlements do I have in my first year of employment?",
+          "retrieved_count": 2,
+          "latency_ms": 679.8,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-009",
+          "question": "What should I check before signing an employment contract?",
+          "search_query": "What should I check before signing an employment contract?",
+          "retrieved_count": 3,
+          "latency_ms": 691.53,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-010",
+          "question": "Tell me about the rules around being let go from work in Kenya",
+          "search_query": "Tell me about the rules around being let go from work in Kenya",
+          "retrieved_count": 2,
+          "latency_ms": 669.27,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-011",
+          "question": "What does Section 42 of the Employment Act say?",
+          "search_query": "What does Section 42 of the Employment Act say?",
+          "retrieved_count": 3,
+          "latency_ms": 688.96,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-012",
+          "question": "How do I write a good CV for a bank job in Kenya?",
+          "search_query": "How do I write a good CV for a bank job in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 704.49,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-013",
+          "question": "What government programs help young people find jobs in Kenya?",
+          "search_query": "What government programs help young people find jobs in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 696.16,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-014",
+          "question": "What are common signs that a job might not be real?",
+          "search_query": "What are common signs that a job might not be real?",
+          "retrieved_count": 2,
+          "latency_ms": 709.82,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-015",
+          "question": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "search_query": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "retrieved_count": 2,
+          "latency_ms": 712.33,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-016",
+          "question": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "search_query": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "retrieved_count": 2,
+          "latency_ms": 723.28,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-017",
+          "question": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "search_query": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "retrieved_count": 3,
+          "latency_ms": 699.35,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.5,
+            "recall_at_5": 0.5,
+            "precision_at_3": 0.3333,
+            "precision_at_5": 0.3333,
+            "mrr": 1.0,
+            "evidence_coverage": 0.5,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-018",
+          "question": "My boss keeps making comments about my appearance. What should I do?",
+          "search_query": "My boss keeps making comments about my appearance. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 760.9,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.4,
+            "recall_at_5": 0.4,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-019",
+          "question": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "search_query": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "retrieved_count": 2,
+          "latency_ms": 739.45,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-020",
+          "question": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "search_query": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "retrieved_count": 2,
+          "latency_ms": 695.97,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-027",
+          "question": "What happens if I refuse the extension?",
+          "search_query": "What are the potential consequences of refusing to sign a written agreement to extend a probation period beyond the initial term in a Kenyan employment contract?",
+          "retrieved_count": 2,
+          "latency_ms": 5066.38,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-030",
+          "question": "Is that the same for private sector companies?",
+          "search_query": "Are the leave entitlements under the Employment Act, such as annual, sick, maternity, and paternity leave, the same for private sector companies?",
+          "retrieved_count": 2,
+          "latency_ms": 13030.25,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-031",
+          "question": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "search_query": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "retrieved_count": 2,
+          "latency_ms": 582.23,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-033",
+          "question": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "search_query": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "retrieved_count": 2,
+          "latency_ms": 585.93,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-034",
+          "question": "What's the HELB repayment process once I start working?",
+          "search_query": "What's the HELB repayment process once I start working?",
+          "retrieved_count": 2,
+          "latency_ms": 678.67,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-035",
+          "question": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "search_query": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "retrieved_count": 2,
+          "latency_ms": 726.13,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-036",
+          "question": "I have a job interview at Safaricom next week. How should I prepare?",
+          "search_query": "I have a job interview at Safaricom next week. How should I prepare?",
+          "retrieved_count": 2,
+          "latency_ms": 593.14,
+          "metrics": {
+            "recall_at_1": 0.6667,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-037",
+          "question": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "search_query": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "retrieved_count": 2,
+          "latency_ms": 624.24,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-039",
+          "question": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "search_query": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 733.2,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "config_name": "Exp 3: Hybrid Search (Dense + BM25)",
+      "metrics": {
+        "mean_recall_at_1": 0.2609,
+        "mean_recall_at_3": 0.3891,
+        "mean_recall_at_5": 0.3891,
+        "mean_precision_at_3": 0.546,
+        "mean_precision_at_5": 0.546,
+        "mean_mrr": 0.7069,
+        "mean_evidence_coverage": 0.2356,
+        "mean_latency_ms": 857.77,
+        "p95_latency_ms": 1802.56
+      },
+      "case_count": 29,
+      "case_details": [
+        {
+          "test_id": "GE-001",
+          "question": "How long is the probation period legally capped at in Kenya?",
+          "search_query": "How long is the probation period legally capped at in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 1356.44,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-002",
+          "question": "What are the statutory deductions on a Kenyan payslip?",
+          "search_query": "What are the statutory deductions on a Kenyan payslip?",
+          "retrieved_count": 3,
+          "latency_ms": 525.33,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.8333,
+            "recall_at_5": 0.8333,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-003",
+          "question": "Can my employer terminate me without notice during probation?",
+          "search_query": "Can my employer terminate me without notice during probation?",
+          "retrieved_count": 3,
+          "latency_ms": 630.8,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-004",
+          "question": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "search_query": "What is the minimum wage in Kenya for someone working in Nairobi?",
+          "retrieved_count": 3,
+          "latency_ms": 532.4,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-005",
+          "question": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "search_query": "What rights do I have if my employer hasn't given me a written contract after 3 months?",
+          "retrieved_count": 3,
+          "latency_ms": 770.56,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-006",
+          "question": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "search_query": "Is it true that an employer in Kenya can dock my pay for being late?",
+          "retrieved_count": 3,
+          "latency_ms": 815.14,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-007",
+          "question": "What is the maximum number of working hours per week in Kenya?",
+          "search_query": "What is the maximum number of working hours per week in Kenya?",
+          "retrieved_count": 3,
+          "latency_ms": 538.42,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 0.6667,
+            "precision_at_5": 0.6667,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-008",
+          "question": "What leave entitlements do I have in my first year of employment?",
+          "search_query": "What leave entitlements do I have in my first year of employment?",
+          "retrieved_count": 2,
+          "latency_ms": 643.48,
+          "metrics": {
+            "recall_at_1": 0.8,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 1.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-009",
+          "question": "What should I check before signing an employment contract?",
+          "search_query": "What should I check before signing an employment contract?",
+          "retrieved_count": 3,
+          "latency_ms": 545.24,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-010",
+          "question": "Tell me about the rules around being let go from work in Kenya",
+          "search_query": "Tell me about the rules around being let go from work in Kenya",
+          "retrieved_count": 2,
+          "latency_ms": 763.42,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.6,
+            "recall_at_5": 0.6,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-011",
+          "question": "What does Section 42 of the Employment Act say?",
+          "search_query": "What does Section 42 of the Employment Act say?",
+          "retrieved_count": 3,
+          "latency_ms": 635.26,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.3333,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-012",
+          "question": "How do I write a good CV for a bank job in Kenya?",
+          "search_query": "How do I write a good CV for a bank job in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 565.77,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-013",
+          "question": "What government programs help young people find jobs in Kenya?",
+          "search_query": "What government programs help young people find jobs in Kenya?",
+          "retrieved_count": 2,
+          "latency_ms": 549.3,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-014",
+          "question": "What are common signs that a job might not be real?",
+          "search_query": "What are common signs that a job might not be real?",
+          "retrieved_count": 2,
+          "latency_ms": 588.37,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.6667,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-015",
+          "question": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "search_query": "A recruiter asked me to send KES 3,000 via M-Pesa for a training kit before I start. Is this normal?",
+          "retrieved_count": 2,
+          "latency_ms": 502.91,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-016",
+          "question": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "search_query": "I found a data entry job paying KES 120,000 per month with no experience needed. Should I apply?",
+          "retrieved_count": 2,
+          "latency_ms": 607.8,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-017",
+          "question": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "search_query": "My employer hasn't paid me for 2 months. Can I take them to court?",
+          "retrieved_count": 3,
+          "latency_ms": 567.04,
+          "metrics": {
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.5,
+            "recall_at_5": 0.5,
+            "precision_at_3": 0.3333,
+            "precision_at_5": 0.3333,
+            "mrr": 1.0,
+            "evidence_coverage": 0.5,
+            "retrieved_count": 3
+          }
+        },
+        {
+          "test_id": "GE-018",
+          "question": "My boss keeps making comments about my appearance. What should I do?",
+          "search_query": "My boss keeps making comments about my appearance. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 660.9,
+          "metrics": {
+            "recall_at_1": 0.4,
+            "recall_at_3": 0.4,
+            "recall_at_5": 0.4,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-019",
+          "question": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "search_query": "Is it safe to share my national ID copy with a recruiter I found on Facebook?",
+          "retrieved_count": 2,
+          "latency_ms": 560.38,
+          "metrics": {
+            "recall_at_1": 0.2,
+            "recall_at_3": 0.2,
+            "recall_at_5": 0.2,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-020",
+          "question": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "search_query": "A company wants me to buy products worth KES 5,000 and resell them to friends to earn commission. Is this a real job?",
+          "retrieved_count": 2,
+          "latency_ms": 626.8,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-027",
+          "question": "What happens if I refuse the extension?",
+          "search_query": "What are the potential consequences of refusing to sign a written agreement to extend a probation period beyond the initial term in a Kenyan employment contract?",
+          "retrieved_count": 2,
+          "latency_ms": 5532.42,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-030",
+          "question": "Is that the same for private sector companies?",
+          "search_query": "Are the leave entitlements under the Employment Act, such as annual, sick, maternity, and paternity leave, the same for private sector companies?",
+          "retrieved_count": 2,
+          "latency_ms": 2099.97,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-031",
+          "question": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "search_query": "Actually, I'm more worried about the dress code. What should I wear to a tech startup?",
+          "retrieved_count": 2,
+          "latency_ms": 692.09,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-033",
+          "question": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "search_query": "I'm thinking of leaving my bank job to start a business. How do I resign properly?",
+          "retrieved_count": 2,
+          "latency_ms": 509.03,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-034",
+          "question": "What's the HELB repayment process once I start working?",
+          "search_query": "What's the HELB repayment process once I start working?",
+          "retrieved_count": 2,
+          "latency_ms": 608.79,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-035",
+          "question": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "search_query": "My employer wants me to work on public holidays without extra pay. Is that allowed?",
+          "retrieved_count": 2,
+          "latency_ms": 713.87,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 0.5,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-036",
+          "question": "I have a job interview at Safaricom next week. How should I prepare?",
+          "search_query": "I have a job interview at Safaricom next week. How should I prepare?",
+          "retrieved_count": 2,
+          "latency_ms": 586.69,
+          "metrics": {
+            "recall_at_1": 0.6667,
+            "recall_at_3": 0.6667,
+            "recall_at_5": 0.6667,
+            "precision_at_3": 1.0,
+            "precision_at_5": 1.0,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-037",
+          "question": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "search_query": "I want to negotiate my salary but I've never done it before. What do I actually say?",
+          "retrieved_count": 2,
+          "latency_ms": 454.8,
+          "metrics": {
+            "recall_at_1": 0.3333,
+            "recall_at_3": 0.3333,
+            "recall_at_5": 0.3333,
+            "precision_at_3": 0.5,
+            "precision_at_5": 0.5,
+            "mrr": 1.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        },
+        {
+          "test_id": "GE-039",
+          "question": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "search_query": "My contract ends in 2 weeks and I haven't been told if it will be renewed. What should I do?",
+          "retrieved_count": 2,
+          "latency_ms": 692.04,
+          "metrics": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "mrr": 0.0,
+            "evidence_coverage": 0.0,
+            "retrieved_count": 2
+          }
+        }
+      ]
+    }
+  ]
+}

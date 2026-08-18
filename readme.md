@@ -60,44 +60,68 @@ To combine low-latency conversational responsiveness with high legal and safety 
 
 ---
 
-## 3. System Architecture & Q&A Flow
+### 3.1 Q&A RAG Orchestration Flow (Mermaid Sequence Diagram)
 
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Young Professional (User)
+    participant UI as Vite React / Web UI
+    participant API as FastAPI Backend (/api/chat)
+    participant Router as Intent & Gating Engine
+    participant Guard as Safety Guardrails
+    participant VectorDB as ChromaDB Dual-Index
+    participant LLM as Gemini 3.1 Flash Lite
+
+    User->>UI: Submit career query ("Can my boss fire me on probation?")
+    UI->>API: POST /api/chat { message, session_id }
+    API->>Router: Classify Intent & Decide Retrieval
+    
+    alt Greeting / Pure Emotional
+        Router-->>API: Gating OFF (top_k=0)
+    else Statutory / Contract / Scam Query
+        Router->>Guard: Run Input Guardrails (OOS & Scam pre-checks)
+        Guard-->>Router: Guardrail Passed
+        Router->>VectorDB: Query Dual Index (Employment Act + Handbook)
+        VectorDB-->>Router: Return Top 3 Grounded Vector Chunks
+    end
+
+    Router->>LLM: Generate Content (System Mentor Prompt + Context)
+    LLM-->>Guard: Raw Draft Response
+    Guard->>Guard: Run Legal Boundary Output Check
+    Guard-->>API: Final Approved Grounded Response
+    API-->>UI: JSON { answer, sources, guardrails, latency_ms }
+    UI-->>User: Render Amani Response + Citations
 ```
-                 User Question / Chat Input (Streamlit / REST API)
-                                      │
-                                      ▼
-                        ┌───────────────────────────┐
-                        │   FastAPI Server / Chat   │
-                        └─────────────┬─────────────┘
-                                      │
-               ┌──────────────────────┴──────────────────────┐
-               │                                             │
-      Simple Greeting?                              Complex Career Query?
-               │                                             │
-               ▼ (<25ms)                                     ▼
-   Fast-Path Greeting Return                    ┌─────────────────────────┐
-   "Hujambo! How can I help?"                   │ Bridge AI Pipeline      │
-                                                └────────────┬────────────┘
-                                                             │
-                                                             ▼
-                                                ┌─────────────────────────┐
-                                                │ 1. Intent Classifier    │
-                                                │ 2. Response Planner     │
-                                                │ 3. Session Memory Load  │
-                                                └────────────┬────────────┘
-                                                             │
-                                                             ▼
-                                                ┌─────────────────────────┐
-                                                │ 4. Out-of-Scope Check   │── FAIL ──→ Warm Redirect
-                                                │ 5. Scam Red Flag Check  │── FLAG ──→ Inject Warning
-                                                │ 6. ChromaDB RAG Search  │ (Top 5 vector chunks)
-                                                │ 7. Gemini Generation    │ (Gemini 2.5 Flash)
-                                                │ 8. Legal Disclaimer Check│── REWRITE → Add Ministry Disclaimer
-                                                └────────────┬────────────┘
-                                                             │
-                                                             ▼
-                                                Approved Grounded Response
-                                                (Markdown + Citations + TTS Audio)
+
+### 3.2 Real-time Multimodal Voice Session Flow (Mermaid Sequence Diagram)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Voice User
+    participant UI as Voice Lounge (UI)
+    participant Audio as AudioEngine (Web Audio API)
+    participant WS as WebSocket Client
+    participant GeminiLive as Gemini Live Bidi API
+    participant VoiceRAG as Voice RAG Tool (/api/voice-rag)
+
+    User->>UI: Click "Talk to Amani"
+    UI->>WS: Connect WebSocket (gemini-3.1-flash-live-preview)
+    WS->>GeminiLive: Send Setup Message (System Instruction + Voice)
+    GeminiLive-->>WS: SETUP_COMPLETE
+    GeminiLive-->>Audio: Stream Spoken Greeting ("Hey there, I'm Amani...")
+
+    User->>Audio: Speak ("What are statutory deductions on my payslip?")
+    Audio->>WS: Stream PCM Audio Chunks (base64)
+    WS->>GeminiLive: Bidi Stream Audio Content
+    GeminiLive->>GeminiLive: Detect Statutory Question Intent
+    GeminiLive->>WS: Send Tool Call (search_knowledge_base)
+    WS->>VoiceRAG: POST /api/voice-rag { function_name, args }
+    VoiceRAG-->>WS: Return Grounded Corpus Facts (PAYE, NSSF, SHA)
+    WS->>GeminiLive: Send Tool Response
+    GeminiLive-->>Audio: Stream Synthesized Spoken Audio
+    Audio-->>User: Play Spoken Response Out Loud
 ```
 
 ---
@@ -183,6 +207,7 @@ Evaluated across **4 distinct layers**:
 
 | Decision Area | Selected Approach | Alternative Considered | Trade-off / Rationale |
 | :--- | :--- | :--- | :--- |
+| **LLM Engine & Completion** | **Google Gemini API** (`generate_content`, `system_instruction`) | **OpenAI Chat Completions** (`openai.chat.completions.create`) | Gemini compiles `system_instruction` natively at instance creation, anchoring Amani's mentor persona across turns. Dual-purpose `gemini-embedding-2` `task_type` optimization aligns document storage vectors specifically for query retrieval. Free-tier Flash latency (<1.5s) enables zero-cost PoC scale. |
 | **Vector DB** | Local ChromaDB (`chromadb`) | Cloud Pinecone / Weaviate | Local ChromaDB eliminates external SaaS costs, API network latency, and data privacy concerns. |
 | **LLM Provider** | Gemini 2.5 Flash | GPT-4o / Local Ollama | Gemini Flash delivers fast response times (<1.5s), low cost, and native Kenyan English/Sheng comprehension. |
 | **Safety Filter** | Code Guardrails (`src/guardrails/`) | System Prompt Only | System prompts can be bypassed. Programmatic Python code guardrails guarantee 100% safety enforcement. |
@@ -222,29 +247,36 @@ python3 src/ingestion/build_index.py
 ```
 *Indexes 7 Kenyan documents into `db/chroma_db` (242 chunks).*
 
-### 2. Run Evaluation & Test Suites
+### 2. Systematic Evaluation Framework
 ```bash
-# Run backend API test suite
-python3 test_backend_server.py
-
-# Run hybrid reasoning intent suite
-python3 test_hybrid_reasoning_architecture.py
-
-# Run candidate 10-turn career suite
-python3 test_10_first_job_questions.py
+python3 evaluation/run_evaluation.py
 ```
+*Executes the 44 Golden Set test cases using Gemini LLM-as-a-Judge (0–2 scale) and generates `evaluation/results/evaluation_report.md`.*
 
 ### 3. Launch FastAPI Backend Server
 ```bash
-uvicorn src.api.server:app --host 0.0.0.0 --port 8000 --reload
+./start_backend.sh
+# OR: uvicorn src.api.server:app --host 0.0.0.0 --port 8000 --reload
 ```
 *Access interactive API docs at `http://127.0.0.1:8000/docs`.*
 
-### 4. Launch Streamlit Interactive UI
+### 4. Launch React / Vite Frontend
 ```bash
-streamlit run app.py --server.port 8501
+cd bridge_ai_ui
+npm run dev
 ```
-*Access web interface at `http://localhost:8501`.*
+*Access web interface & Gemini Live Voice Lounge at `http://localhost:5173`.*
+
+---
+
+## 13. Systematic Evaluation Framework & Girl Effect Alignment
+
+To transition from manual testing to evidence-based AI engineering, Bridge AI incorporates a **Systematic Evaluation Framework**:
+
+- **Golden Evaluation Set (`golden_eval_set.json`)**: 44 carefully curated test cases covering 8 dimensions: Grounding / Accuracy, Retrieval Quality, Safety & Legal Boundaries, Tone & Empathy, Conversational Continuity (multi-turn), Target Audience Appropriateness, Actionability, and Out-of-Scope Abstention.
+- **LLM-as-a-Judge**: Evaluates candidate responses using `models/gemini-3.1-flash-lite` at `temperature=0.0` across all 8 dimensions on a 0–2 scale (0 = Fail, 1 = Partial, 2 = Pass).
+- **Latency & Operational Profiling**: Profiles total, retrieval, generation, and guardrail latency for both RAG queries and non-RAG conversational turns (reporting mean, median, and P95 latency).
+- **Failure Analysis**: Automated failure detection and category grouping to drive iterative engineering improvements.
 
 ---
 

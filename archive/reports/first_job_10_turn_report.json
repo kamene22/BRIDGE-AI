@@ -1,0 +1,175 @@
+{
+  "summary": {
+    "total_turns": 10,
+    "average_turn_latency_ms": 2088.62,
+    "total_journey_duration_sec": 20.89
+  },
+  "turns": [
+    {
+      "turn_number": 1,
+      "user_message": "Ahh, I just landed my first job as a Junior Communications Assistant at an NGO in Upper Hill! I'm so excited but really nervous!",
+      "amani_response": "Ahh, congratulations! Landing your first role as a Junior Communications Assistant in Upper Hill is a massive achievement. That mix of excitement and nerves is a very real part of starting a new chapter, especially in a fast-paced professional hub like that.\n\nSince you are heading into your first few days, here are two practical things to focus on:\n\n*   **Observe the communication culture:** Spend your first week paying attention to how the team shares information, whether they prefer email, Slack, or quick desk chats, and how they handle feedback.\n*   **Clarify expectations early:** Don't be afraid to ask your supervisor for a quick meeting to confirm what your top three priorities should be for your first month so you can focus your energy effectively.\n\nTake a moment to celebrate this win before you dive into the deep end. Do you have your onboarding schedule or a start date confirmed yet?",
+      "sources_cited": [],
+      "route_name": "emotional",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.03,
+        "retrieval_gating_ms": 0.05,
+        "retrieval_ms": 0.0,
+        "generation_ms": 2661.05,
+        "total_latency_ms": 2661.29
+      }
+    },
+    {
+      "turn_number": 2,
+      "user_message": "What should I prepare or wear for my very first day?",
+      "amani_response": "That first-day wardrobe and preparation anxiety is completely standard\u2014you want to strike the right balance between professional and comfortable. Since you are starting at an NGO in Upper Hill, the dress code is likely \"business casual,\" but it is always safer to lean slightly more formal on day one.\n\nHere is how to handle your preparation:\n\n*   **Dress for the role you want:** Opt for smart-casual attire, such as a crisp shirt or blouse paired with tailored trousers or a modest skirt. Avoid anything too casual like jeans or sneakers until you have observed the office culture for a few days and confirmed what is acceptable.\n*   **Bring the essentials:** Carry a notebook and a reliable pen for taking notes during your orientation, as you will be receiving a lot of information at once. Also, ensure you have your original academic certificates, KRA PIN, NSSF, and NHIF details in a neat folder, as HR will likely need these for your personnel file.\n\nIt is better to be slightly overdressed than underdressed when you are meeting your new team for the first time. Have you received any specific instructions from HR regarding what documents to bring, or are you just planning to have your standard paperwork ready to go?",
+      "sources_cited": [],
+      "route_name": "conversational",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.03,
+        "retrieval_gating_ms": 0.06,
+        "retrieval_ms": 0.0,
+        "generation_ms": 1811.67,
+        "total_latency_ms": 1811.9
+      }
+    },
+    {
+      "turn_number": 3,
+      "user_message": "My offer letter says my probation is 6 months. Is that normal in Kenya?",
+      "amani_response": "That question about the length of your probation is a very practical one to ask before you sign or start. It is common to feel a bit of uncertainty when you see a six-month timeline laid out in your contract.\n\nIn Kenya, a six-month probation period is standard and is explicitly permitted under the Employment Act. It is the most common duration employers use to assess a new hire's fit and performance.\n\nHere are two things to keep in mind regarding this period:\n\n*   **Legal framework:** Under the Employment Act, a probationary period cannot exceed six months, though it can be extended for another six months if both you and your employer agree to it in writing.\n*   **Proactive management:** Since this is a significant window of time, you don't have to wait for the end of the six months to know where you stand. Around the three-month mark, it is perfectly professional to ask your manager for a quick check-in to see if there are specific areas they would like you to focus on or improve.\n\nIt is a good sign that you are reading your offer letter closely and thinking about the terms. Have you had a chance to review the rest of the contract, specifically the sections regarding notice periods or your specific job responsibilities?",
+      "sources_cited": [
+        "Hidden Curriculum Kenya (Lines 43\u201353)",
+        "Hidden Curriculum Kenya (Lines 1\u201311)",
+        "Employment Act (Page 29)"
+      ],
+      "route_name": "legal",
+      "retrieval_used": true,
+      "latency_breakdown": {
+        "intent_ms": 0.02,
+        "retrieval_gating_ms": 0.05,
+        "retrieval_ms": 860.67,
+        "generation_ms": 1889.35,
+        "total_latency_ms": 2750.29
+      }
+    },
+    {
+      "turn_number": 4,
+      "user_message": "Can my employer extend probation beyond 6 months?",
+      "amani_response": "It is a smart move to clarify the limits of that probation period now, as it helps you understand exactly how much flexibility your employer has under the law.\n\nUnder the Employment Act in Kenya, your employer cannot unilaterally extend your probation beyond the initial six months. While the law does allow for an extension of up to another six months, this can only happen if both you and your employer agree to it in writing. \n\nHere are two key points to keep in mind:\n\n*   **Mutual Consent:** An extension is not automatic; it requires your formal agreement. If your employer proposes an extension, you have the right to discuss the reasons for it and decide whether to sign the agreement.\n*   **Total Duration:** The total aggregate period of probation, including any extension, cannot exceed 12 months. \n\nSince you are just starting, focus on your performance and building those early relationships, as most managers use the initial six months to determine if you are the right fit. Have you noticed any specific clauses in your contract regarding how they handle performance reviews or feedback during this time?",
+      "sources_cited": [
+        "Employment Act (Page 29)",
+        "Bridge Ai Career Handbook Expanded (Lines 831\u2013852)",
+        "Hidden Curriculum Kenya (Lines 1\u201311)"
+      ],
+      "route_name": "legal",
+      "retrieval_used": true,
+      "latency_breakdown": {
+        "intent_ms": 0.03,
+        "retrieval_gating_ms": 0.05,
+        "retrieval_ms": 444.46,
+        "generation_ms": 1706.78,
+        "total_latency_ms": 2151.48
+      }
+    },
+    {
+      "turn_number": 5,
+      "user_message": "What statutory deductions should I expect on my first payslip?",
+      "amani_response": "Seeing those first deductions on your payslip can be a bit of a surprise, but it is helpful to know exactly where that money is going before your first payday arrives.\n\nIt is completely standard to have statutory deductions taken from your gross salary in Kenya. These are mandatory contributions required by law, and your employer is responsible for remitting them on your behalf.\n\nHere are the three main deductions you will see on your payslip:\n\n*   **PAYE (Pay As You Earn):** This is your income tax, which is calculated on a progressive scale based on your earnings. You are entitled to a monthly personal tax relief of KES 2,400, which is subtracted from your calculated tax to lower the final amount.\n*   **NSSF (National Social Security Fund):** This is a mandatory retirement contribution that helps you build savings for your future.\n*   **NHIF/SHA (Social Health Authority):** This is your mandatory contribution toward national health insurance, ensuring you have coverage for medical services.\n\nYour employer is required by the Employment Act to provide you with an itemized pay statement that clearly shows these deductions. If you are ever unsure about the specific amounts or how they were calculated, it is perfectly professional to ask your HR department to walk you through your first payslip so you can understand each line item.\n\nHave you already received your KRA PIN and NSSF/NHIF registration details, or is that something you still need to sort out before your first day?",
+      "sources_cited": [
+        "First Salary Financial Literacy (Lines 1\u201318)",
+        "Hidden Curriculum Kenya (Lines 23\u201327)",
+        "Employment Act (Page 21)"
+      ],
+      "route_name": "legal",
+      "retrieval_used": true,
+      "latency_breakdown": {
+        "intent_ms": 0.03,
+        "retrieval_gating_ms": 0.06,
+        "retrieval_ms": 508.08,
+        "generation_ms": 1946.55,
+        "total_latency_ms": 2455.0
+      }
+    },
+    {
+      "turn_number": 6,
+      "user_message": "What if someone asks me to send KES 2,000 via M-Pesa for a staff badge or uniform fee?",
+      "amani_response": "That is a major red flag, and I am glad you are asking about this before handing over any money. That feeling of hesitation is your intuition looking out for you, and it is absolutely correct to be cautious here.\n\n**You should not pay this.** Here is the reality of the situation:\n\n*   **Legitimate employers do not charge fees:** In Kenya, a genuine employer\u2014especially a reputable NGO\u2014will never ask a candidate or a new employee to pay for their own staff badge, uniform, or any other \"processing\" or \"registration\" fees. These are operational costs that the organization covers as part of doing business.\n*   **Avoid M-Pesa for recruitment:** Any request to send money via M-Pesa or to an unverified paybill for a job-related expense is a classic sign of a recruitment scam. If someone is asking for money to secure your position or provide you with equipment, they are not acting in good faith.\n\nIf you are being asked for this payment by someone claiming to be from the NGO, please step back and verify the request through an official, independent channel\u2014like calling the organization's main office number listed on their verified website, rather than using a number provided by the person asking for the money. \n\nHas this request come from someone you have already met in person at the office, or is this happening via email or phone?",
+      "sources_cited": [],
+      "route_name": "conversational",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.02,
+        "retrieval_gating_ms": 0.06,
+        "retrieval_ms": 0.0,
+        "generation_ms": 1840.26,
+        "total_latency_ms": 1840.47
+      }
+    },
+    {
+      "turn_number": 7,
+      "user_message": "I accidentally sent an internal draft email to the wrong person at work \ud83d\ude2d what should I do?",
+      "amani_response": "Oof \ud83d\ude2d that stomach-drop feeling is real. I know exactly how that feels\u2014the moment you hit \"send\" and realize the recipient list is wrong, time seems to stand still.\n\nTake a deep breath. It happens to the best of us, and the most important thing now is to handle it with professional maturity. Here is how to manage the situation:\n\n*   **Assess the content:** If the email contains sensitive, confidential, or unprofessional information, notify your manager or IT department immediately. Being proactive about a potential data leak is always better than waiting for someone else to discover it.\n*   **The \"Recall\" or \"Correction\" approach:** If you use Outlook or Gmail, check if you have a \"Recall\" or \"Undo Send\" feature enabled. If not, send a polite, brief follow-up email to the recipient immediately: \"Please disregard my previous email, as it was sent to you in error. I apologize for any confusion caused.\" Do not over-explain or apologize excessively; keep it professional and move on.\n\nMost people are understanding about honest mistakes, especially when they are addressed quickly and directly. Was the information in the draft highly sensitive, or was it just a matter of internal notes being shared prematurely?",
+      "sources_cited": [],
+      "route_name": "conversational",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.03,
+        "retrieval_gating_ms": 0.14,
+        "retrieval_ms": 0.0,
+        "generation_ms": 1651.96,
+        "total_latency_ms": 1652.34
+      }
+    },
+    {
+      "turn_number": 8,
+      "user_message": "My manager barely speaks to me during my first week. Does she dislike me?",
+      "amani_response": "It is completely natural to feel anxious when you are in a new environment and the person you report to is quiet. That silence can feel very loud when you are looking for guidance or validation during your first few days.\n\nWe cannot know for sure how your manager feels based on her silence alone. In a busy NGO environment, a manager\u2019s lack of communication is often about their own workload or management style rather than a reflection of your performance.\n\nHere are two practical ways to handle this:\n\n*   **Assume it is about capacity, not you:** Many managers are juggling multiple projects and may not realize how much support a new hire needs unless it is explicitly requested. It is likely she is simply preoccupied with her own deadlines.\n*   **Take the initiative to schedule a check-in:** Send a brief, professional email or message: \"Hi [Manager's Name], I\u2019m settling in well and would love to have 15 minutes of your time this week to ensure my priorities for the first month align with your expectations.\" This puts the ball in her court without making it feel like a confrontation.\n\nMost managers actually appreciate it when a new team member takes the lead in managing their own onboarding. Have you had a chance to observe if she is equally quiet with the rest of the team, or does she seem to be interacting with others more frequently?",
+      "sources_cited": [],
+      "route_name": "conversational",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.05,
+        "retrieval_gating_ms": 0.3,
+        "retrieval_ms": 0.0,
+        "generation_ms": 1971.24,
+        "total_latency_ms": 1971.88
+      }
+    },
+    {
+      "turn_number": 9,
+      "user_message": "How many days of paid annual leave am I entitled to under the Kenya Employment Act?",
+      "amani_response": "It is a great idea to get clear on your leave entitlements early on so you can plan your time off effectively throughout the year.\n\nUnder the Employment Act, you are entitled to not less than 21 working days of leave with full pay after every 12 consecutive months of service. \n\nHere are two important details to keep in mind regarding how this works:\n\n*   **Pro-rata leave:** If your employment is terminated after you have completed at least two consecutive months of service, you are entitled to not less than one and three-quarter days of leave for each completed month of service.\n*   **Taking your leave:** Your employer can, with your consent, divide your leave into different parts, but at least one of those parts must consist of at least two uninterrupted working weeks.\n\nIt is always a good practice to check your specific employment contract as well, because if your employer offers more than the statutory minimum of 21 days, those more favorable terms will apply to you. Have you had a chance to look at the leave policy section in your contract yet?",
+      "sources_cited": [
+        "Employment Act (Page 23)",
+        "Employment Act (Page 24)",
+        "Bridge Ai Career Handbook Expanded (Lines 1695\u20131695)"
+      ],
+      "route_name": "legal",
+      "retrieval_used": true,
+      "latency_breakdown": {
+        "intent_ms": 0.04,
+        "retrieval_gating_ms": 0.43,
+        "retrieval_ms": 688.14,
+        "generation_ms": 1539.15,
+        "total_latency_ms": 2228.13
+      }
+    },
+    {
+      "turn_number": 10,
+      "user_message": "Okay, thank you so much Amani! That helps me feel so much more confident.",
+      "amani_response": "You are very welcome! It is great to hear that you are feeling more confident as you settle into your role. \n\nNavigating the first few weeks of a new job is a learning curve for everyone, and having these details cleared up makes a big difference in how you approach your daily tasks. You are already doing the right thing by being proactive and asking the right questions.\n\nAs you continue your first month, remember that you don't have to have everything figured out immediately. Focus on being observant, asking questions when you are unsure, and building those initial connections with your colleagues.\n\nIs there anything else on your mind as you head into your next few days at the office, or are you feeling ready to take it from here?",
+      "sources_cited": [],
+      "route_name": "conversational",
+      "retrieval_used": false,
+      "latency_breakdown": {
+        "intent_ms": 0.07,
+        "retrieval_gating_ms": 0.17,
+        "retrieval_ms": 0.0,
+        "generation_ms": 1362.62,
+        "total_latency_ms": 1363.4
+      }
+    }
+  ]
+}

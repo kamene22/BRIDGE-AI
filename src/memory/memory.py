@@ -1,28 +1,73 @@
 """
-memory.py — Session Memory & User Profile Builder (Phase 6)
+src/memory/memory.py — Session Memory, Conversation Store & Profile Builder
 
-Design principles from the design document:
-  "Memory and knowledge are pulled at the same retrieval step but kept
-  conceptually separate. The corpus is the ONLY thing the model is allowed
-  to treat as a source of fact — memory shapes tone and relevance, never
-  supplies new information the model didn't already have grounded elsewhere."
-
-Two components:
-  1. ConversationMemory: Sliding window of the last N turns (default 5).
-     Formatted into a compact context string injected into the prompt.
-  2. UserProfile: Lightweight key-value store of facts the user has
-     explicitly stated in the conversation (career stage, employer type,
-     location, stated concerns). Shapes relevance without adding new facts.
+Implements:
+  1. UUID Session Management & In-Memory Store (`create_session`, `add_message`, `get_conversation_history`)
+  2. History Formatting for Prompts (`format_history_for_prompt`)
+  3. Sliding Window & Profile Extractor (`ConversationMemory`, `UserProfile`)
 """
 
-from typing import Optional
-from dataclasses import dataclass, field
+import uuid
 from datetime import datetime
+from typing import Optional, List, Dict, Any
+from dataclasses import dataclass, field
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Data Structures
-# ─────────────────────────────────────────────────────────────────────────────
+# ── Global In-Memory Conversation Store ───────────────────────────────────────
+conversations: Dict[str, List[Dict[str, Any]]] = {}
+
+
+def create_session() -> str:
+    """Creates a new unique conversation session ID."""
+    session_id = str(uuid.uuid4())
+    conversations[session_id] = []
+    return session_id
+
+
+def clear_session_history(session_id: str) -> None:
+    """Clears conversation history for a session."""
+    conversations[session_id] = []
+
+
+def add_message(session_id: str, role: str, content: str) -> None:
+    """Adds a message to the conversation history for a session."""
+    if session_id not in conversations:
+        conversations[session_id] = []
+
+    conversations[session_id].append({
+        "role": role,
+        "content": content,
+        "timestamp": datetime.utcnow().isoformat()
+    })
+
+
+def get_conversation_history(session_id: str, max_messages: Optional[int] = 15) -> List[Dict[str, Any]]:
+    """Gets recent conversation history for a session."""
+    if session_id not in conversations:
+        return []
+
+    history = conversations[session_id]
+    if max_messages:
+        history = history[-max_messages:]
+
+    return history
+
+
+def format_history_for_prompt(session_id: str, max_messages: int = 4) -> str:
+    """Formats recent conversation history (sliding window of last 4 messages) as a clean string for prompt context."""
+    history = get_conversation_history(session_id, max_messages)
+    if not history:
+        return "None."
+
+    formatted_history = []
+    for msg in history:
+        role_label = "Human" if msg["role"] == "user" else "Assistant"
+        formatted_history.append(f"{role_label}: {msg['content']}")
+
+    return "\n\n".join(formatted_history)
+
+
+# ── Structured Memory Data Structures ─────────────────────────────────────────
 
 @dataclass
 class Turn:
@@ -38,18 +83,14 @@ class UserProfile:
     """
     Lightweight profile of facts the user has explicitly stated.
     Only populated from what the user directly says — never inferred.
-
-    Design doc: "memory shapes tone and relevance, never supplies new
-    information the model didn't already have grounded elsewhere."
     """
-    career_stage: Optional[str] = None        # e.g. "fresh graduate", "6 months in"
-    employer_type: Optional[str] = None       # e.g. "NGO", "bank", "startup", "government"
-    current_concern: Optional[str] = None     # e.g. "probation ending", "scam worry"
-    location: Optional[str] = None            # e.g. "Nairobi", "Mombasa"
-    extra_context: list[str] = field(default_factory=list)  # Other stated facts
+    career_stage: Optional[str] = None
+    employer_type: Optional[str] = None
+    current_concern: Optional[str] = None
+    location: Optional[str] = None
+    extra_context: list[str] = field(default_factory=list)
 
     def to_string(self) -> str:
-        """Returns a compact string summary of the user profile for prompt injection."""
         parts = []
         if self.career_stage:
             parts.append(f"Career stage: {self.career_stage}")
@@ -71,30 +112,18 @@ class UserProfile:
         ])
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Conversation Memory Manager
-# ─────────────────────────────────────────────────────────────────────────────
-
 class ConversationMemory:
     """
-    Manages a sliding window of the last N conversation turns.
-
-    The window is the only memory mechanism — there is no persistent storage
-    between sessions in this PoC. Each session starts fresh.
-
-    Design doc: "sliding window history handler" — keeps enough context for
-    coherent multi-turn conversation without ballooning the prompt size.
+    Manages sliding window of turns and profile signals for a session.
     """
-
-    def __init__(self, window_size: int = 5):
-        """
-        Args:
-            window_size: Maximum number of past turns to retain.
-                         Design doc specifies 5 as the starting parameter.
-        """
+    def __init__(self, window_size: int = 15):
         self.window_size = window_size
         self.turns: list[Turn] = []
         self.profile = UserProfile()
+
+    @property
+    def turn_count(self) -> int:
+        return len(self.turns)
 
     def add_turn(
         self,
@@ -102,10 +131,6 @@ class ConversationMemory:
         assistant_response: str,
         guardrails_triggered: list[str] = None
     ) -> None:
-        """
-        Records a completed exchange and maintains the sliding window.
-        Automatically extracts profile signals from the user message.
-        """
         turn = Turn(
             user_message=user_message,
             assistant_response=assistant_response,
@@ -113,112 +138,48 @@ class ConversationMemory:
         )
         self.turns.append(turn)
 
-        # Trim to window size — oldest turns dropped first
         if len(self.turns) > self.window_size:
             self.turns = self.turns[-self.window_size:]
 
-        # Update user profile from the message
         self._extract_profile_signals(user_message)
 
+    def clear(self) -> None:
+        self.turns = []
+        self.profile = UserProfile()
+
+    def get_full_memory_block(self) -> str:
+        if not self.turns and self.profile.is_empty():
+            return ""
+
+        blocks = []
+        if not self.profile.is_empty():
+            blocks.append(f"USER PROFILE (Established Facts):\n{self.profile.to_string()}")
+
+        if self.turns:
+            history_lines = []
+            for idx, turn in enumerate(self.turns, 1):
+                history_lines.append(f"Turn {idx}:")
+                history_lines.append(f"  User: {turn.user_message}")
+                history_lines.append(f"  Amani: {turn.assistant_response}")
+            blocks.append("RECENT CONVERSATION HISTORY:\n" + "\n".join(history_lines))
+
+        return "\n\n".join(blocks)
+
     def _extract_profile_signals(self, message: str) -> None:
-        """
-        Rule-based extraction of explicit profile signals from user messages.
-        Only records what is clearly stated — no inference or assumption.
-
-        Design doc: "memory shapes tone and relevance, never supplies
-        new information the model didn't already have grounded elsewhere."
-        """
         msg_lower = message.lower()
-
-        # Career stage signals
-        if any(kw in msg_lower for kw in ["just graduated", "fresh graduate", "just finished uni",
-                                           "fresh from campus", "first job", "recently graduated"]):
+        if any(kw in msg_lower for kw in ["just graduated", "fresh graduate", "just finished uni", "fresh from campus", "first job"]):
             self.profile.career_stage = "fresh graduate"
         elif any(kw in msg_lower for kw in ["6 months", "six months", "been working for"]):
             self.profile.career_stage = "6+ months in first role"
-        elif any(kw in msg_lower for kw in ["still in uni", "final year", "still studying",
-                                              "fourth year", "3rd year"]):
-            self.profile.career_stage = "still in university"
 
-        # Employer type signals
-        if any(kw in msg_lower for kw in ["ngo", "non-profit", "nonprofit", "charity"]):
-            self.profile.employer_type = "NGO/non-profit"
-        elif any(kw in msg_lower for kw in ["bank", "co-operative", "sacco", "microfinance"]):
-            self.profile.employer_type = "banking/finance"
-        elif any(kw in msg_lower for kw in ["startup", "tech company", "fintech"]):
-            self.profile.employer_type = "startup/tech"
-        elif any(kw in msg_lower for kw in ["government", "county", "civil service", "public service"]):
-            self.profile.employer_type = "government/public sector"
+        if any(kw in msg_lower for kw in ["ngo", "non-profit", "non profit"]):
+            self.profile.employer_type = "NGO"
+        elif any(kw in msg_lower for kw in ["bank", "banking", "finance"]):
+            self.profile.employer_type = "Bank/Finance"
+        elif any(kw in msg_lower for kw in ["tech company", "startup", "software firm"]):
+            self.profile.employer_type = "Tech Startup"
 
-        # Location signals
-        for city in ["nairobi", "mombasa", "kisumu", "nakuru", "eldoret", "thika"]:
-            if city in msg_lower:
-                self.profile.location = city.capitalize()
-                break
-
-        # Concern signals
-        if any(kw in msg_lower for kw in ["probation ending", "end of probation",
-                                            "probation is almost", "probation period is"]):
-            self.profile.current_concern = "probation period"
-        elif any(kw in msg_lower for kw in ["pay me", "upfront", "deposit", "uniform fee",
-                                              "registration fee", "seems like a scam"]):
-            self.profile.current_concern = "potential job scam"
-
-    def format_for_prompt(self) -> str:
-        """
-        Formats recent conversation history into a compact block for prompt injection.
-
-        Returns an empty string if there are no prior turns (first message in session).
-        Memory context is injected between the system prompt and the retrieved corpus
-        chunks — it shapes relevance but is never treated as a source of fact.
-        """
-        if not self.turns:
-            return ""
-
-        lines = ["CONVERSATION HISTORY (for context only — not a source of facts):"]
-        lines.append("-" * 50)
-
-        for i, turn in enumerate(self.turns, 1):
-            lines.append(f"[Turn {i}]")
-            lines.append(f"User: {turn.user_message.strip()}")
-            # Truncate long assistant responses to keep prompt size manageable
-            response_preview = turn.assistant_response.strip()
-            if len(response_preview) > 300:
-                response_preview = response_preview[:297] + "..."
-            lines.append(f"Bridge AI: {response_preview}")
-            lines.append("")
-
-        lines.append("-" * 50)
-        return "\n".join(lines)
-
-    def format_profile_for_prompt(self) -> str:
-        """Returns the user profile summary string for prompt injection."""
-        if self.profile.is_empty():
-            return ""
-        return f"USER CONTEXT (explicitly stated): {self.profile.to_string()}"
-
-    def get_full_memory_block(self) -> str:
-        """
-        Returns the complete memory block to inject into the prompt.
-        Combines profile summary + conversation history.
-        Empty string if this is the first turn in a session.
-        """
-        parts = []
-        profile_str = self.format_profile_for_prompt()
-        history_str = self.format_for_prompt()
-
-        if profile_str:
-            parts.append(profile_str)
-        if history_str:
-            parts.append(history_str)
-
-        return "\n\n".join(parts) if parts else ""
-
-    @property
-    def turn_count(self) -> int:
-        return len(self.turns)
-
-    def clear(self) -> None:
-        """Resets the session — called when a new conversation starts."""
-        self.turns = []
-        self.profile = UserProfile()
+        if any(kw in msg_lower for kw in ["nairobi", "mombasa", "kisumu", "nakuru", "eldoret"]):
+            for loc in ["nairobi", "mombasa", "kisumu", "nakuru", "eldoret"]:
+                if loc in msg_lower:
+                    self.profile.location = loc.capitalize()

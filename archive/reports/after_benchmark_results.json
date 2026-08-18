@@ -1,0 +1,73 @@
+[
+  {
+    "label": "1. Standalone RAG",
+    "query": "What is probation?",
+    "answer_preview": "In Kenya, probation is an initial trial period at the start of employment where both you and your employer evaluate whether the role and workplace are",
+    "total_ms": 8065.1,
+    "gating_ms": 0.11,
+    "retrieval_ms": 2971.68,
+    "generation_ms": 5092.82,
+    "sources_count": 3
+    
+  },
+  {
+    "label": "2. Context Follow-up",
+    "query": "Can they extend it?",
+    "answer_preview": "Yes, an employer in Kenya can extend a probationary period, but there are clear legal and contractual boundaries governing how it must be done.\n\nHere ",
+    "total_ms": 6998.04,
+    "gating_ms": 0.19,
+    "retrieval_ms": 0.0,
+    "generation_ms": 6997.49,
+    "sources_count": 0
+  },
+  {
+    "label": "3. Situation Follow-up",
+    "query": "What happens if I refuse?",
+    "answer_preview": "Refusing a probation extension is a significant step that usually brings your employment to a firm decision point at the end of your current probation",
+    "total_ms": 6219.91,
+    "gating_ms": 0.09,
+    "retrieval_ms": 0.0,
+    "generation_ms": 6219.59,
+    "sources_count": 0
+  },
+  {
+    "label": "4. Closure",
+    "query": "Okay, thanks.",
+    "answer_preview": "You are very welcome! Knowing your legal rights under Kenyan employment law gives you solid ground to stand on when navigating these workplace convers",
+    "total_ms": 4664.83,
+    "gating_ms": 0.14,
+    "retrieval_ms": 0.0,
+    "generation_ms": 4664.44,
+    "sources_count": 0
+  },
+  {
+    "label": "5. New Topic",
+    "query": "What about my contract?",
+    "answer_preview": "That is a key question, as your written contract is the legal foundation for where you stand right now. \n\nWhen a probation period ends or an extension",
+    "total_ms": 6829.69,
+    "gating_ms": 0.14,
+    "retrieval_ms": 0.0,
+    "generation_ms": 6828.96,
+    "sources_count": 0
+  },
+  {
+    "label": "6. Complex Legal Query",
+    "query": "My employer changed my salary without telling me. What should I do?",
+    "answer_preview": "Discovering an unexpected change in your pay\u2014especially without prior notice or explanation\u2014can feel deeply stressful, but I\u2019m glad you\u2019re taking proa",
+    "total_ms": 13898.98,
+    "gating_ms": 0.18,
+    "retrieval_ms": 0.0,
+    "generation_ms": 6499.5,
+    "sources_count": 0
+  },
+  {
+    "label": "7. Out-of-Corpus Query",
+    "query": "What is the capital of France?",
+    "answer_preview": "That's outside what I'm built to help with. Bridge AI is specifically here for questions about landing your first job and navigating early employment ",
+    "total_ms": 0.31,
+    "gating_ms": 0.12,
+    "retrieval_ms": 0.0,
+    "generation_ms": 0.0,
+    "sources_count": 0
+  }
+]

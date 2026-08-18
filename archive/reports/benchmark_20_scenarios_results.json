@@ -1,0 +1,377 @@
+{
+  "benchmark_summary": {
+    "total_scenarios_evaluated": 20,
+    "total_turns_evaluated": 60,
+    "average_turn_latency_ms": 6350.0,
+    "grounding_ratio_pct": 100.0,
+    "context_reuse_ratio_pct": 33.3,
+    "zero_error_rate_pct": 100.0
+  },
+  "session_summaries": [
+    {
+      "session_id": "session_10_overtime_pay_rights",
+      "expected_outcome": "Explains legal working hours (45-52 hrs/wk) and overtime rate multipliers.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1744.16
+    },
+    {
+      "session_id": "session_11_imposter_syndrome_coaching",
+      "expected_outcome": "Empathetic coaching reframing imposter syndrome into structured learning habits.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1939.49
+    },
+    {
+      "session_id": "session_12_salary_delay_protocol",
+      "expected_outcome": "Explains Section 17 wage payment rules and professional follow-up steps.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1869.23
+    },
+    {
+      "session_id": "session_13_summary_dismissal_protection",
+      "expected_outcome": "Grounded legal explanation of Section 41 & 44 termination procedures.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 2724.91
+    },
+    {
+      "session_id": "session_14_maternity_paternity_leave",
+      "expected_outcome": "Grounded legal explanation of Sections 29 & 30 parental leave.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1898.06
+    },
+    {
+      "session_id": "session_15_resignation_notice_period",
+      "expected_outcome": "Explains Section 35 & 42 notice period and pay-in-lieu rules.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1973.04
+    },
+    {
+      "session_id": "session_16_confidentiality_nda_rules",
+      "expected_outcome": "Practical advice on IP, NDA boundaries, and ethical career transitions.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 2042.25
+    },
+    {
+      "session_id": "session_17_workplace_harassment_reporting",
+      "expected_outcome": "Protective, professional guidance on documentation and HR reporting.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1645.67
+    },
+    {
+      "session_id": "session_18_performance_pip_review",
+      "expected_outcome": "Constructive reframing of PIP into objective goals and documentation.",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1983.17
+    },
+    {
+      "session_id": "session_19_freelance_vs_employment_contract",
+      "expected_outcome": "Distinguishes Contract of Service (employee) vs Contract for Service (consultant).",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1474.48
+    },
+    {
+      "session_id": "session_20_asking_for_feedback",
+      "expected_outcome": "Actionable feedback framework (Start / Stop / Continue model).",
+      "turns_count": 3,
+      "avg_turn_latency_ms": 1705.58
+    }
+  ],
+  "all_turns_evaluated": [
+    {
+      "scenario_id": "session_10_overtime_pay_rights",
+      "turn_index": 1,
+      "user_prompt": "I am working 60 hours a week including Saturdays. Am I legally entitled to overtime pay?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 2869.0
+    },
+    {
+      "scenario_id": "session_10_overtime_pay_rights",
+      "turn_index": 2,
+      "user_prompt": "What is the statutory overtime rate on public holidays in Kenya?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1080.65
+    },
+    {
+      "scenario_id": "session_10_overtime_pay_rights",
+      "turn_index": 3,
+      "user_prompt": "I will check my contract overtime clause and track my daily working hours.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1282.82
+    },
+    {
+      "scenario_id": "session_11_imposter_syndrome_coaching",
+      "turn_index": 1,
+      "user_prompt": "Everyone on my team seems so smart while I take twice as long to finish tickets. Am I failing?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1756.17
+    },
+    {
+      "scenario_id": "session_11_imposter_syndrome_coaching",
+      "turn_index": 2,
+      "user_prompt": "How do I ask senior devs for help without looking incompetent?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 2612.27
+    },
+    {
+      "scenario_id": "session_11_imposter_syndrome_coaching",
+      "turn_index": 3,
+      "user_prompt": "I will use the 30-minute debugging rule before asking for assistance.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1450.04
+    },
+    {
+      "scenario_id": "session_12_salary_delay_protocol",
+      "turn_index": 1,
+      "user_prompt": "Our pay date is the 30th, but it's now the 12th of next month and salary hasn't arrived. What are my options?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1518.41
+    },
+    {
+      "scenario_id": "session_12_salary_delay_protocol",
+      "turn_index": 2,
+      "user_prompt": "What does the Kenya Employment Act say about timely payment of wages?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2685.72
+    },
+    {
+      "scenario_id": "session_12_salary_delay_protocol",
+      "turn_index": 3,
+      "user_prompt": "I'll write a polite query to Finance copying HR to ask for an estimated disbursement date.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1403.56
+    },
+    {
+      "scenario_id": "session_13_summary_dismissal_protection",
+      "turn_index": 1,
+      "user_prompt": "Can an employer fire me on the spot without a disciplinary meeting?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 3518.64
+    },
+    {
+      "scenario_id": "session_13_summary_dismissal_protection",
+      "turn_index": 2,
+      "user_prompt": "What acts constitute gross misconduct under Section 44 of the Employment Act?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2471.09
+    },
+    {
+      "scenario_id": "session_13_summary_dismissal_protection",
+      "turn_index": 3,
+      "user_prompt": "Understood. Section 41 guarantees the right to a fair hearing and representation.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2185.01
+    },
+    {
+      "scenario_id": "session_14_maternity_paternity_leave",
+      "turn_index": 1,
+      "user_prompt": "What are the statutory maternity and paternity leave periods in Kenya?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2246.72
+    },
+    {
+      "scenario_id": "session_14_maternity_paternity_leave",
+      "turn_index": 2,
+      "user_prompt": "Does maternity leave affect my annual leave entitlement?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 2,
+      "total_latency_ms": 1761.16
+    },
+    {
+      "scenario_id": "session_14_maternity_paternity_leave",
+      "turn_index": 3,
+      "user_prompt": "Clear! 3 months maternity and 2 weeks paternity leave do not reduce annual leave.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 1686.3
+    },
+    {
+      "scenario_id": "session_15_resignation_notice_period",
+      "turn_index": 1,
+      "user_prompt": "I received a better job offer. How much notice do I need to give while on probation?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2180.0
+    },
+    {
+      "scenario_id": "session_15_resignation_notice_period",
+      "turn_index": 2,
+      "user_prompt": "What if I want to resign immediately without serving notice?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1446.05
+    },
+    {
+      "scenario_id": "session_15_resignation_notice_period",
+      "turn_index": 3,
+      "user_prompt": "Section 42 specifies 7 days notice or 7 days pay in lieu during probation.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 3,
+      "total_latency_ms": 2293.08
+    },
+    {
+      "scenario_id": "session_16_confidentiality_nda_rules",
+      "turn_index": 1,
+      "user_prompt": "My contract has a non-compete and NDA clause. Can I work for a competitor in Nairobi?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1579.26
+    },
+    {
+      "scenario_id": "session_16_confidentiality_nda_rules",
+      "turn_index": 2,
+      "user_prompt": "What information is strictly considered proprietary data?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1816.26
+    },
+    {
+      "scenario_id": "session_16_confidentiality_nda_rules",
+      "turn_index": 3,
+      "user_prompt": "I'll ensure I don't share client lists or internal source code from my previous employer.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": true,
+      "sources_count": 2,
+      "total_latency_ms": 2731.24
+    },
+    {
+      "scenario_id": "session_17_workplace_harassment_reporting",
+      "turn_index": 1,
+      "user_prompt": "A senior colleague keeps making uncomfortable personal comments about my appearance.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1588.23
+    },
+    {
+      "scenario_id": "session_17_workplace_harassment_reporting",
+      "turn_index": 2,
+      "user_prompt": "How do I document these incidents officially before speaking to HR?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1753.71
+    },
+    {
+      "scenario_id": "session_17_workplace_harassment_reporting",
+      "turn_index": 3,
+      "user_prompt": "I will keep a written log with dates and times and consult HR confidentially.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1595.08
+    },
+    {
+      "scenario_id": "session_18_performance_pip_review",
+      "turn_index": 1,
+      "user_prompt": "My manager put me on a 30-day Performance Improvement Plan (PIP). Does this mean I am getting fired?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1848.19
+    },
+    {
+      "scenario_id": "session_18_performance_pip_review",
+      "turn_index": 2,
+      "user_prompt": "How can I turn a PIP into a positive outcome?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 2425.81
+    },
+    {
+      "scenario_id": "session_18_performance_pip_review",
+      "turn_index": 3,
+      "user_prompt": "I will agree on measurable daily metrics with my manager and document weekly progress.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1675.52
+    },
+    {
+      "scenario_id": "session_19_freelance_vs_employment_contract",
+      "turn_index": 1,
+      "user_prompt": "I signed an Independent Contractor Agreement. Do I get statutory health insurance and paid leave?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1223.2
+    },
+    {
+      "scenario_id": "session_19_freelance_vs_employment_contract",
+      "turn_index": 2,
+      "user_prompt": "What is the key legal difference between a contract of service and contract for service?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1688.24
+    },
+    {
+      "scenario_id": "session_19_freelance_vs_employment_contract",
+      "turn_index": 3,
+      "user_prompt": "Understood. Contractors handle their own taxes (Withholding Tax) and benefits.",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1512.0
+    },
+    {
+      "scenario_id": "session_20_asking_for_feedback",
+      "turn_index": 1,
+      "user_prompt": "I have completed my first 30 days. How should I ask my supervisor for constructive feedback?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1869.26
+    },
+    {
+      "scenario_id": "session_20_asking_for_feedback",
+      "turn_index": 2,
+      "user_prompt": "What specific questions should I ask during our check-in?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1623.01
+    },
+    {
+      "scenario_id": "session_20_asking_for_feedback",
+      "turn_index": 3,
+      "user_prompt": "I will ask: What should I keep doing, stop doing, and start doing?",
+      "gating_action": "always_retrieve",
+      "retrieval_used": false,
+      "sources_count": 0,
+      "total_latency_ms": 1624.48
+    }
+  ]
+}

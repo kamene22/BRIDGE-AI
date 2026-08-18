@@ -14,7 +14,7 @@ These prompts judge:
   5. Session Impact (Layer 4): Did the multi-turn session resolve with a clear next step?
 """
 
-CONTEXT_RELEVANCE_JUDGE_PROMPT = """You are an expert evaluator assessing retrieval quality for a RAG system.
+CONTEXT_RELEVANCE_JUDGE_PROMPT = """You are a strict, objective evaluator assessing vector retrieval quality for a RAG system.
 
 User Question: "{query}"
 
@@ -23,15 +23,22 @@ Retrieved Context Chunk:
 {chunk_text}
 \"\"\"
 
-Task: Rate how relevant this context chunk is to answering the user's question on a scale of 0 to 1:
-- 1.0 = Highly relevant; directly contains facts needed to answer the question.
-- 0.5 = Partially relevant; contains peripheral context or related topic.
-- 0.0 = Irrelevant; does not relate to the question.
+Task: Perform a Critique-First evaluation of how relevant this context chunk is to answering the user's specific question.
 
-Respond in JSON format with keys "score" (float) and "reasoning" (string short explanation).
+Scoring Rules (Deductive System starting at 1.0):
+- Start at 1.0.
+- If the chunk contains NO relevant facts for the query, set score to 0.0 immediately.
+- If the chunk is only peripherally related (e.g. general topic match but missing specific statutory article or fact requested), deduct 0.4.
+- If the chunk contains extra noisy or irrelevant sections alongside relevant ones, deduct 0.2.
+
+You MUST format your output in JSON format with:
+  "critique": list of strings detailing specific gaps or flaws,
+  "score": float between 0.0 and 1.0 (e.g., 0.8, 0.6, 0.0),
+  "reasoning": concise 1-sentence summary of the score.
+
 JSON:"""
 
-FAITHFULNESS_JUDGE_PROMPT = """You are an expert auditor assessing hallucination in RAG responses.
+FAITHFULNESS_JUDGE_PROMPT = """You are a strict, discriminating auditor detecting hallucinations in RAG responses.
 
 Retrieved Context:
 \"\"\"
@@ -43,15 +50,22 @@ Generated Answer:
 {answer}
 \"\"\"
 
-Task: Check if EVERY claim in the generated answer is directly supported by the retrieved context.
-- 1.0 = Fully faithful; zero hallucinated facts outside the context.
-- 0.5 = Partially faithful; minor extrapolations but mostly grounded.
-- 0.0 = Unfaithful; contains unsupported claims or hallucinated facts.
+Task: Perform a Critique-First evaluation. Examine EVERY claim in the generated answer against the retrieved context.
 
-Respond in JSON format with keys "score" (float) and "reasoning" (string short explanation).
+Scoring Rules (Deductive System starting at 1.0):
+- Start at 1.0.
+- Deduct 0.3 for each factual claim or statuary section number NOT present in the retrieved context.
+- Deduct 0.2 for minor logical extrapolations not strictly backed by context.
+- If the answer contains major fabricated laws or hallucinated advice, score 0.0.
+
+You MUST format your output in JSON format with:
+  "critique": list of strings detailing any ungrounded claims,
+  "score": float between 0.0 and 1.0,
+  "reasoning": concise 1-sentence summary of the score.
+
 JSON:"""
 
-ANSWER_RELEVANCE_JUDGE_PROMPT = """You are an expert evaluator checking answer quality.
+ANSWER_RELEVANCE_JUDGE_PROMPT = """You are a strict evaluator assessing answer relevance and completeness.
 
 User Question: "{query}"
 
@@ -60,31 +74,46 @@ Generated Answer:
 {answer}
 \"\"\"
 
-Task: Rate how directly and completely the answer addresses the user's question:
-- 1.0 = Directly answers the question in clear, helpful detail.
-- 0.5 = Indirect or incomplete answer.
-- 0.0 = Off-topic or fails to answer the question.
+Task: Perform a Critique-First evaluation of how directly and completely the answer addresses the user's immediate question.
 
-Respond in JSON format with keys "score" (float) and "reasoning" (string short explanation).
+Scoring Rules (Deductive System starting at 1.0):
+- Start at 1.0.
+- Deduct 0.2 if the answer fails to provide actionable next steps or practical advice.
+- Deduct 0.3 if the answer ignores part of the user's explicit multi-turn follow-up.
+- Deduct 0.4 if the answer gives a generic canned response without addressing the specific prompt.
+- Deduct 1.0 if the answer is completely off-topic.
+
+You MUST format your output in JSON format with:
+  "critique": list of strings detailing missing information or flaws,
+  "score": float between 0.0 and 1.0,
+  "reasoning": concise 1-sentence summary of the score.
+
 JSON:"""
 
-TONE_JUDGE_PROMPT = """You are an expert tone evaluator for Bridge AI, a mentor chatbot for young Kenyan professionals.
+TONE_JUDGE_PROMPT = """You are a strict tone auditor for Bridge AI (Amani), a career companion for young professionals in Kenya.
 
 Target Tone Guidelines:
-- Warm, encouraging, direct, and non-condescending (sounds like a slightly older colleague).
-- Kenyan English conventions, concise paragraphs.
-- Max 1-2 emojis on light topics; ZERO emojis on scam, legal, or workplace-rights topics.
-- No formal corporate HR jargon, no overly casual slang.
+- Warm, encouraging, direct senior colleague (Big Sis persona).
+- Kenyan English conventions, clear concise paragraphs.
+- Zero emojis on legal, scam, or statutory topics. Max 1-2 emojis on celebratory/light topics.
+- ZERO generic corporate HR jargon (e.g., banned phrases: "I understand how you feel", "That must be difficult", "Navigate early career decisions").
 
 Generated Answer:
 \"\"\"
 {answer}
 \"\"\"
 
-Task: Rate the tone appropriateness on a scale of 0 to 1:
-- 1.0 = Perfect tone alignment with all guidelines.
-- 0.5 = Acceptable but slightly too corporate or overly casual.
-- 0.0 = Inappropriate tone (condescending, overly formal HR manual, or misplaced emojis).
+Task: Perform a Critique-First evaluation of tone adherence.
 
-Respond in JSON format with keys "score" (float) and "reasoning" (string short explanation).
+Scoring Rules (Deductive System starting at 1.0):
+- Start at 1.0.
+- Deduct 0.2 for using banned HR jargon or generic empathy templates.
+- Deduct 0.2 for misplaced emojis on legal or scam topics.
+- Deduct 0.15 for sounding overly formal, cold, or like a textbook.
+
+You MUST format your output in JSON format with:
+  "critique": list of strings detailing tone flaws,
+  "score": float between 0.0 and 1.0,
+  "reasoning": concise 1-sentence summary of the score.
+
 JSON:"""

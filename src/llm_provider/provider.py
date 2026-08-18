@@ -19,7 +19,7 @@ import google.generativeai as genai
 from google.api_core import exceptions
 
 class GeminiProvider:
-    def __init__(self, model_name: str = "models/gemini-flash-latest"):
+    def __init__(self, model_name: str = "models/gemini-3.1-flash-lite"):
         self.api_key = os.getenv("GEMINI_API_KEY")
         if self.api_key:
             genai.configure(api_key=self.api_key)
@@ -29,20 +29,40 @@ class GeminiProvider:
         self.model_name = model_name
         self.model = genai.GenerativeModel(model_name)
         self.embedding_model = "models/gemini-embedding-2"
+        self._model_cache = {}
 
-    def embed_texts(self, texts: List[str], task_type: str = "retrieval_document") -> List[List[float]]:
-        """Embeds a list of texts using Gemini's gemini-embedding-2 model."""
+    def _get_model(self, system_prompt: Optional[str] = None):
+        if not system_prompt:
+            return self.model
+        if system_prompt not in self._model_cache:
+            try:
+                self._model_cache[system_prompt] = genai.GenerativeModel(
+                    self.model_name,
+                    system_instruction=system_prompt
+                )
+            except Exception:
+                return self.model
+        return self._model_cache[system_prompt]
+
+    def embed_texts(self, texts: List[str], model: Optional[str] = None, task_type: str = "retrieval_document") -> List[List[float]]:
+        """Embeds a list of texts using Gemini embedding models."""
         if not self.api_key or not texts:
             return [[0.0] * 3072 for _ in texts]
 
+        target_model = model or self.embedding_model
+
         try:
             result = genai.embed_content(
-                model=self.embedding_model,
+                model=target_model,
                 content=texts,
                 task_type=task_type,
             )
-            return result.get('embedding', [[0.0] * 3072 for _ in texts])
+            vecs = result.get('embedding', [])
+            if not vecs:
+                return [[0.0] * 3072 for _ in texts]
+            return vecs
         except Exception as e:
+            print(f"[Gemini Provider Error] Embedding failed: {e}")
             return [[0.0] * 3072 for _ in texts]
 
     def _sanitize_legal_and_textbook_jargon(self, text: str) -> str:
@@ -52,25 +72,64 @@ class GeminiProvider:
         return clean.strip()
 
     def _ensure_complete_sentences(self, text: str) -> str:
-        """Guarantees that responses end at a complete sentence boundary."""
-        text = text.strip()
-        if not text:
-            return text
-        if text[-1] in [".", "!", "?", '"', "'", "”"]:
-            return text
-        
-        last_punct = max(text.rfind("."), text.rfind("!"), text.rfind("?"))
-        if last_punct > 50:
-            return text[:last_punct + 1].strip()
-        
-        return text + "."
+        """Returns text intact without chopping or truncating any sentences or list items."""
+        return text.strip() if text else ""
+
+    def generate_response_stream(
+        self,
+        prompt: str,
+        system_prompt: Optional[str] = None,
+        temperature: float = 0.2,
+        max_output_tokens: int = 550
+    ):
+        """
+        Generates streamed response chunks from Gemini for real-time UI rendering.
+        Yields (chunk_text, ttft_ms_or_none).
+        """
+        if not self.api_key:
+            yield self._ensure_complete_sentences(self._fallback_conversational_synthesis(prompt)), 0.0
+            return
+
+        try:
+            config = genai.types.GenerationConfig(
+                temperature=temperature,
+                max_output_tokens=max_output_tokens,
+            )
+            model_inst = self._get_model(system_prompt)
+            t_gen_start = time.perf_counter()
+            response_stream = model_inst.generate_content(prompt, generation_config=config, stream=True)
+
+            ttft_ms = None
+            for chunk in response_stream:
+                if chunk.text:
+                    if ttft_ms is None:
+                        ttft_ms = (time.perf_counter() - t_gen_start) * 1000.0
+                    yield chunk.text, ttft_ms
+
+        except Exception as e:
+            print(f"[Gemini Stream Warning] Retrying non-streamed LLM generation: {e}")
+            try:
+                # LLM Fallback 1: Retry non-streamed LLM generation
+                llm_res = self.generate_response(
+                    prompt=prompt,
+                    system_prompt=system_prompt,
+                    temperature=temperature,
+                    max_output_tokens=max_output_tokens
+                )
+                if llm_res and len(llm_res.strip()) > 10:
+                    yield llm_res, 0.0
+                    return
+            except Exception as llm_e:
+                print(f"[Gemini LLM Fallback Warning]: {llm_e}")
+
+            yield self._ensure_complete_sentences(self._fallback_conversational_synthesis(prompt)), 0.0
 
     def generate_response(
         self,
         prompt: str,
         system_prompt: Optional[str] = None,
         temperature: float = 0.2,
-        max_output_tokens: int = 1500
+        max_output_tokens: int = 550
     ) -> str:
         if not self.api_key:
             return self._ensure_complete_sentences(self._fallback_conversational_synthesis(prompt))
@@ -80,40 +139,23 @@ class GeminiProvider:
                 temperature=temperature,
                 max_output_tokens=max_output_tokens,
             )
-
-            response = None
-            if system_prompt:
-                try:
-                    model_with_sys = genai.GenerativeModel(
-                        self.model_name,
-                        system_instruction=system_prompt
-                    )
-                    response = model_with_sys.generate_content(prompt, generation_config=config)
-                except Exception as sys_e:
-                    print(f"System instruction prompt generation warning: {sys_e}. Falling back to standard model.")
-                    response = self.model.generate_content(prompt, generation_config=config)
-            else:
-                response = self.model.generate_content(prompt, generation_config=config)
+            model_inst = self._get_model(system_prompt)
+            response = model_inst.generate_content(prompt, generation_config=config)
 
             if response and response.candidates:
                 candidate = response.candidates[0]
                 if candidate.content and candidate.content.parts:
-                    parts_list = []
-                    for p in candidate.content.parts:
-                        try:
-                            if p.text:
-                                parts_list.append(p.text)
-                        except Exception:
-                            pass
+                    parts_list = [p.text for p in candidate.content.parts if hasattr(p, "text") and p.text]
                     if parts_list:
                         return self._ensure_complete_sentences("".join(parts_list))
 
-            try:
-                if response and response.text:
-                    return self._ensure_complete_sentences(response.text)
-            except Exception:
-                pass
+            if response and response.text:
+                return self._ensure_complete_sentences(response.text)
 
+            return self._ensure_complete_sentences(self._fallback_conversational_synthesis(prompt))
+
+        except Exception as e:
+            print(f"Gemini LLM Generation Warning: {e}. Falling back to conversational synthesis.")
             return self._ensure_complete_sentences(self._fallback_conversational_synthesis(prompt))
 
         except Exception as e:
@@ -126,8 +168,10 @@ class GeminiProvider:
         Eliminates technical preambles, legal code numbers, and textbook jargon.
         """
         p_lower = prompt.lower()
-        if "user question:" in p_lower:
-            p_lower = p_lower.split("user question:")[-1].strip()
+        for kw in ["user message:", "user query:", "current question:", "user question:", "query:"]:
+            if kw in p_lower:
+                p_lower = p_lower.split(kw)[-1].strip()
+                break
 
         # 0. THANK YOU & CONVERSATION CONCLUSION
         if any(w in p_lower for w in ["thank you", "thanks", "asante", "asante sana"]) or p_lower in ["thank you!", "thanks!", "asante!"]:
@@ -136,8 +180,18 @@ class GeminiProvider:
                 "Whenever you need to brainstorm or navigate anything else in your career, I'm here. Wishing you all the best!"
             )
 
-        # 0a. 1-ON-1 CHECK-IN EXPECTATIONS ("not yet what should I expect")
-        if any(k in p_lower for k in ["expect", "1-on-1", "check-in", "check in", "not yet"]):
+        # 0a. WAITING FOR ONBOARDING / LOGIN CREDENTIALS
+        if any(k in p_lower for k in ["onboarding", "login", "credentials", "waiting for access", "waiting for details"]):
+            return (
+                "Understood! Since you are waiting for your access and onboarding details, you have a small window of time to prepare yourself mentally before the work begins.\n\n"
+                "Here are two practical things you can do before your first day:\n"
+                "1. Review public-facing information: If the company has a public website or app, spend some time exploring it as a user.\n"
+                "2. Prepare your note-taking system: Set up a dedicated physical notebook or digital document for logging observations and findings.\n\n"
+                "Is there anything else about the logistics of your first day that is on your mind?"
+            )
+
+        # 0b. 1-ON-1 CHECK-IN EXPECTATIONS
+        if any(k in p_lower for k in ["1-on-1", "check-in", "check in"]):
             return (
                 "During your first 1-on-1 check-in, your manager is mainly looking to align on role expectations and help you settle in.\n\n"
                 "Here is what to expect:\n"

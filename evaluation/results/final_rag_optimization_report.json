@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-08-14T17:42:48Z",
+  "baseline": {
+    "recall_at_1": 0.2667,
+    "recall_at_3": 0.4264,
+    "recall_at_5": 0.4879,
+    "precision_at_3": 0.5517,
+    "precision_at_5": 0.5862,
+    "mrr": 0.7425,
+    "fact_recall_at_3": 0.2299,
+    "complete_answer_rate_at_3": 0.1379,
+    "semantic_only_match_rate_at_3": 0.5287,
+    "avg_context_tokens": 806.3,
+    "avg_context_chars": 3227.2,
+    "latencies": {
+      "mean_qexp_ms": 0.0,
+      "mean_embedding_ms": 539.21,
+      "mean_db_ms": 15.41,
+      "mean_reranker_ms": 0.0,
+      "mean_total_ms": 554.62,
+      "p50_total_ms": 526.18,
+      "p95_total_ms": 670.68,
+      "min_total_ms": 436.12,
+      "max_total_ms": 1099.81
+    }
+  },
+  "candidate": {
+    "recall_at_1": 0.2828,
+    "recall_at_3": 0.4431,
+    "recall_at_5": 0.5316,
+    "precision_at_3": 0.6322,
+    "precision_at_5": 0.6138,
+    "mrr": 0.7241,
+    "fact_recall_at_3": 0.2644,
+    "complete_answer_rate_at_3": 0.1379,
+    "semantic_only_match_rate_at_3": 0.5287,
+    "avg_context_tokens": 1093.3,
+    "avg_context_chars": 4374.7,
+    "latencies": {
+      "mean_qexp_ms": 0.006,
+      "mean_embedding_ms": 504.86,
+      "mean_db_ms": 15.43,
+      "mean_reranker_ms": 0.0,
+      "mean_total_ms": 520.3,
+      "p50_total_ms": 517.13,
+      "p95_total_ms": 585.9,
+      "min_total_ms": 454.46,
+      "max_total_ms": 680.51
+    }
+  }
+}

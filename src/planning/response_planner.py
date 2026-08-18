@@ -22,6 +22,7 @@ class ResponsePlan:
         empathy_level: str,
         requires_followup: bool,
         guardrail_rules: List[str],
+        max_tokens: int = 600,
     ):
         self.intent = intent
         self.structure = structure
@@ -29,6 +30,7 @@ class ResponsePlan:
         self.empathy_level = empathy_level
         self.requires_followup = requires_followup
         self.guardrail_rules = guardrail_rules
+        self.max_tokens = max_tokens
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -38,11 +40,52 @@ class ResponsePlan:
             "empathy_level": self.empathy_level,
             "requires_followup": self.requires_followup,
             "guardrail_rules": self.guardrail_rules,
+            "max_tokens": self.max_tokens,
         }
 
 
 class ResponsePlanner:
     """Generates customized ResponsePlan instances tailored to classified user intents."""
+
+    def extract_arguments(self, query: str) -> Dict[str, Any]:
+        """
+        REAPER Argument & Entity Extractor (CIKM '24)
+        Extracts structured entities from informal situational queries to enable precise adaptation.
+        """
+        q_lower = query.lower().strip()
+
+        # Core Scenario Detection
+        scenario = "general_mentorship"
+        if any(k in q_lower for k in ["probation", "trial period", "extend"]):
+            scenario = "probation_rights"
+        elif any(k in q_lower for k in ["email", "sent email", "wrong person", "mistake"]):
+            scenario = "email_mistake_apology"
+        elif any(k in q_lower for k in ["scam", "fee", "mpesa", "deposit", "uniform"]):
+            scenario = "scam_prevention"
+        elif any(k in q_lower for k in ["wear", "dress code", "clothes", "outfit", "in person"]):
+            scenario = "first_day_prep"
+        elif any(k in q_lower for k in ["manager", "boss", "talks to me", "ignores me"]):
+            scenario = "manager_relationship"
+
+        # Workplace Setting
+        setting = "in_person"
+        if "remote" in q_lower or "online" in q_lower:
+            setting = "remote"
+        elif "hybrid" in q_lower:
+            setting = "hybrid"
+
+        # Emotional Register
+        emotion = "curious"
+        if any(k in q_lower for k in ["😭", "scared", "terrified", "anxious", "worried", "mistake"]):
+            emotion = "anxious"
+        elif any(k in q_lower for k in ["excited", "got my first job", "landed"]):
+            emotion = "enthusiastic"
+
+        return {
+            "core_scenario": scenario,
+            "workplace_setting": setting,
+            "emotional_register": emotion
+        }
 
     def create_plan(self, intent: IntentCategory) -> ResponsePlan:
         if intent == IntentCategory.KNOWLEDGE:
@@ -56,7 +99,8 @@ class ResponsePlanner:
                     "Stay 100% grounded in retrieved knowledge.",
                     "Do not speculate or add unverified assumptions.",
                     "Provide a direct answer immediately."
-                ]
+                ],
+                max_tokens=1000
             )
 
         elif intent == IntentCategory.PROCEDURAL:
@@ -70,7 +114,8 @@ class ResponsePlanner:
                     "Convert handbook principles into clear numbered or bulleted steps.",
                     "Keep steps concise and actionable for early career graduates.",
                     "Ensure steps match Kenyan workplace norms."
-                ]
+                ],
+                max_tokens=800
             )
 
         elif intent == IntentCategory.SITUATIONAL:
@@ -93,7 +138,8 @@ class ResponsePlanner:
                     "Do NOT introduce yourself unless greeted.",
                     "Do NOT force a follow-up question if the user is saying thank you or concluding.",
                     "NEVER invent company HR policies, legal advice, or disciplinary procedures."
-                ]
+                ],
+                max_tokens=500
             )
 
         elif intent == IntentCategory.REFLECTIVE:
@@ -115,7 +161,8 @@ class ResponsePlanner:
                     "Do NOT jump immediately to fixing or solving—explore first.",
                     "Validate the user's feelings and experience naturally.",
                     "Ask one thoughtful, open-ended question to help the user unpack their thoughts."
-                ]
+                ],
+                max_tokens=400
             )
 
         elif intent == IntentCategory.LEGAL:
@@ -130,10 +177,11 @@ class ResponsePlanner:
                     "Do not speculate on legal outcomes or guarantee court decisions.",
                     "If corpus does not contain the answer, explicitly state legal uncertainty.",
                     "Recommend consulting official HR or Labour Office if appropriate."
-                ]
+                ],
+                max_tokens=550
             )
 
-        else: # SCAM
+        else: # SCAM / CONVERSATIONAL
             return ResponsePlan(
                 intent=intent,
                 structure=["Scam warning block", "Red flag checklist", "Safety action"],
@@ -144,5 +192,6 @@ class ResponsePlanner:
                     "Issue an immediate clear warning against paying any recruitment or medical fees.",
                     "State clearly that legitimate Kenyan employers do not charge job seekers.",
                     "Advise user not to send money via M-Pesa or unverified paybills."
-                ]
+                ],
+                max_tokens=450
             )

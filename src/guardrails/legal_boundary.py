@@ -102,7 +102,7 @@ def check_legal_boundary(
             prompt=rewrite_prompt,
             system_prompt=_LEGAL_CORRECTION_INSTRUCTION,
             temperature=0.1,
-            max_output_tokens=700
+            max_output_tokens=1200
         )
         return corrected, True
 

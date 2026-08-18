@@ -1,22 +1,202 @@
 [
   {
     "session_id": "session_01_probation_journey",
-    "description": "User starts confused about probation, asks increasingly specific questions, and reaches a concrete next step.",
+    "description": "User starts confused about probation, asks legal questions under Kenya Employment Act, and reviews extension rules.",
     "turns": [
       "I just started my first job at an NGO in Nairobi. What should I know about probation?",
-      "My manager said my probation is 6 months, but might be extended. Is that normal?",
-      "Okay, thanks! I will review my contract terms today and ask HR for written clarification."
+      "My manager said my probation is 6 months, but might be extended to 8 months. Is that legal?",
+      "Okay, thanks! I will review Section 42 of my contract terms today and ask HR for written clarification."
     ],
-    "expected_outcome": "Session resolves with a concrete next step (reviewing contract & contacting HR)."
+    "expected_outcome": "Session resolves with clear statutory rights on probation caps and written consent rules."
   },
   {
     "session_id": "session_02_scam_caution_journey",
-    "description": "User describes a suspicious job offer, triggers scam guardrail, and ends by stating intent to verify before paying.",
+    "description": "User describes a suspicious job offer requiring M-Pesa payments for uniform fees.",
     "turns": [
       "I got a job offer for data entry paying KES 80k per month!",
       "They asked me to send KES 2,500 via M-Pesa for a training uniform before my start date. Is that required?",
-      "Ah I see that's a red flag. I won't send any money and I'll verify their office address first."
+      "Ah I see that is a major red flag. I will not send any money and will report the recruiter."
     ],
-    "expected_outcome": "User adopts cautious behavior and refrains from sending money."
+    "expected_outcome": "User adopts protective behavior and refrains from sending fees via M-Pesa."
+  },
+  {
+    "session_id": "session_03_first_day_prep_and_dress_code",
+    "description": "Graduate preparing for first day at commercial bank vs tech startup.",
+    "turns": [
+      "I landed my first role at a bank in Upper Hill. What should I wear on Day 1?",
+      "What if I'm not sure about Friday casual wear rules?",
+      "Got it! I will wear formal business attire for week 1 and observe workplace norms."
+    ],
+    "expected_outcome": "User understands dress code norms per industry type and day-one logistics."
+  },
+  {
+    "session_id": "session_04_wrong_email_mistake",
+    "description": "Employee accidentally sent internal draft email to wrong recipient.",
+    "turns": [
+      "I accidentally sent an internal draft email to the wrong person 😭 What should I do?",
+      "Should I call my manager immediately or send a written apology first?",
+      "Understood. I will send a brief, polite email clarifying the mistake and notify my manager."
+    ],
+    "expected_outcome": "User receives calm, professional crisis management advice without panic."
+  },
+  {
+    "session_id": "session_05_manager_relationship",
+    "description": "Early career employee feeling ignored by direct supervisor.",
+    "turns": [
+      "My manager barely speaks to me during my first month. Does that mean she dislikes my work?",
+      "How should I approach her for a 1-on-1 feedback check-in?",
+      "Thanks! I'll send a brief calendar invite asking for a 15-minute alignment check."
+    ],
+    "expected_outcome": "Reframes manager silence around competing priorities and provides feedback framework."
+  },
+  {
+    "session_id": "session_06_payslip_deductions_sha_nssf",
+    "description": "First payslip breakdown explaining statutory deductions in Kenya.",
+    "turns": [
+      "I received my first payslip and noticed deductions for SHA, NSSF, and Housing Levy. Are these compulsory?",
+      "What percentage of my gross income is deducted for NSSF under current regulations?",
+      "Clear! I now understand net vs gross salary statutory calculations."
+    ],
+    "expected_outcome": "Accurate statutory breakdown of Kenyan payroll deductions."
+  },
+  {
+    "session_id": "session_07_medical_exam_scam",
+    "description": "Recruiter demanding KES 3,500 for medical check-up at specific clinic.",
+    "turns": [
+      "An interviewer told me I passed the final round but need to pay KES 3,500 for a medical check-up at their clinic.",
+      "Is medical screening payment normal during hiring in Kenya?",
+      "I'll inform them that mandatory medical checks must be employer-funded."
+    ],
+    "expected_outcome": "Triggers scam alert regarding pre-employment medical fee scams."
+  },
+  {
+    "session_id": "session_08_annual_leave_entitlement",
+    "description": "Employee asking about paid annual leave rights under Section 28.",
+    "turns": [
+      "How many days of paid annual leave am I entitled to per year in Kenya?",
+      "Can my employer force me to forfeit my unused leave days at the end of the year?",
+      "Great to know Section 28 protects 21 working days of paid annual leave."
+    ],
+    "expected_outcome": "Grounded legal explanation of annual leave entitlements under Section 28."
+  },
+  {
+    "session_id": "session_09_remote_work_productivity",
+    "description": "Junior employee struggling with hybrid remote work communication.",
+    "turns": [
+      "I am working remotely 3 days a week. How do I make sure my team knows I'm working hard?",
+      "What tools should I use for daily status updates?",
+      "I will share a 3-bullet daily summary in our Slack channel every evening."
+    ],
+    "expected_outcome": "Provides actionable remote work visibility and communication practices."
+  },
+  {
+    "session_id": "session_10_overtime_pay_rights",
+    "description": "Employee asked to work 60 hours a week without extra pay.",
+    "turns": [
+      "I am working 60 hours a week including Saturdays. Am I legally entitled to overtime pay?",
+      "What is the statutory overtime rate on public holidays in Kenya?",
+      "I will check my contract overtime clause and track my daily working hours."
+    ],
+    "expected_outcome": "Explains legal working hours (45-52 hrs/wk) and overtime rate multipliers."
+  },
+  {
+    "session_id": "session_11_imposter_syndrome_coaching",
+    "description": "Software engineer feeling out of depth during technical onboarding.",
+    "turns": [
+      "Everyone on my team seems so smart while I take twice as long to finish tickets. Am I failing?",
+      "How do I ask senior devs for help without looking incompetent?",
+      "I will use the 30-minute debugging rule before asking for assistance."
+    ],
+    "expected_outcome": "Empathetic coaching reframing imposter syndrome into structured learning habits."
+  },
+  {
+    "session_id": "session_12_salary_delay_protocol",
+    "description": "Salary delayed by 12 days past expected pay date.",
+    "turns": [
+      "Our pay date is the 30th, but it's now the 12th of next month and salary hasn't arrived. What are my options?",
+      "What does the Kenya Employment Act say about timely payment of wages?",
+      "I'll write a polite query to Finance copying HR to ask for an estimated disbursement date."
+    ],
+    "expected_outcome": "Explains Section 17 wage payment rules and professional follow-up steps."
+  },
+  {
+    "session_id": "session_13_summary_dismissal_protection",
+    "description": "Understanding summary dismissal vs fair hearing procedures.",
+    "turns": [
+      "Can an employer fire me on the spot without a disciplinary meeting?",
+      "What acts constitute gross misconduct under Section 44 of the Employment Act?",
+      "Understood. Section 41 guarantees the right to a fair hearing and representation."
+    ],
+    "expected_outcome": "Grounded legal explanation of Section 41 & 44 termination procedures."
+  },
+  {
+    "session_id": "session_14_maternity_paternity_leave",
+    "description": "New parent inquiring about parental leave rights.",
+    "turns": [
+      "What are the statutory maternity and paternity leave periods in Kenya?",
+      "Does maternity leave affect my annual leave entitlement?",
+      "Clear! 3 months maternity and 2 weeks paternity leave do not reduce annual leave."
+    ],
+    "expected_outcome": "Grounded legal explanation of Sections 29 & 30 parental leave."
+  },
+  {
+    "session_id": "session_15_resignation_notice_period",
+    "description": "Resigning from probation vs permanent contract.",
+    "turns": [
+      "I received a better job offer. How much notice do I need to give while on probation?",
+      "What if I want to resign immediately without serving notice?",
+      "Section 42 specifies 7 days notice or 7 days pay in lieu during probation."
+    ],
+    "expected_outcome": "Explains Section 35 & 42 notice period and pay-in-lieu rules."
+  },
+  {
+    "session_id": "session_16_confidentiality_nda_rules",
+    "description": "Understanding NDA obligations when switching companies.",
+    "turns": [
+      "My contract has a non-compete and NDA clause. Can I work for a competitor in Nairobi?",
+      "What information is strictly considered proprietary data?",
+      "I'll ensure I don't share client lists or internal source code from my previous employer."
+    ],
+    "expected_outcome": "Practical advice on IP, NDA boundaries, and ethical career transitions."
+  },
+  {
+    "session_id": "session_17_workplace_harassment_reporting",
+    "description": "Handling inappropriate workplace behavior and reporting channels.",
+    "turns": [
+      "A senior colleague keeps making uncomfortable personal comments about my appearance.",
+      "How do I document these incidents officially before speaking to HR?",
+      "I will keep a written log with dates and times and consult HR confidentially."
+    ],
+    "expected_outcome": "Protective, professional guidance on documentation and HR reporting."
+  },
+  {
+    "session_id": "session_18_performance_pip_review",
+    "description": "Navigating a 30-day Performance Improvement Plan.",
+    "turns": [
+      "My manager put me on a 30-day Performance Improvement Plan (PIP). Does this mean I am getting fired?",
+      "How can I turn a PIP into a positive outcome?",
+      "I will agree on measurable daily metrics with my manager and document weekly progress."
+    ],
+    "expected_outcome": "Constructive reframing of PIP into objective goals and documentation."
+  },
+  {
+    "session_id": "session_19_freelance_vs_employment_contract",
+    "description": "Contractor agreement vs employee statutory rights.",
+    "turns": [
+      "I signed an Independent Contractor Agreement. Do I get statutory health insurance and paid leave?",
+      "What is the key legal difference between a contract of service and contract for service?",
+      "Understood. Contractors handle their own taxes (Withholding Tax) and benefits."
+    ],
+    "expected_outcome": "Distinguishes Contract of Service (employee) vs Contract for Service (consultant)."
+  },
+  {
+    "session_id": "session_20_asking_for_feedback",
+    "description": "Structuring a 30-day check-in conversation with direct supervisor.",
+    "turns": [
+      "I have completed my first 30 days. How should I ask my supervisor for constructive feedback?",
+      "What specific questions should I ask during our check-in?",
+      "I will ask: What should I keep doing, stop doing, and start doing?"
+    ],
+    "expected_outcome": "Actionable feedback framework (Start / Stop / Continue model)."
   }
 ]
