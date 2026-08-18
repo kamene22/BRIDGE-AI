@@ -1,6 +1,6 @@
 # Bridge AI — Grounded Career & Employment Guidance RAG System
 
-**Bridge AI (Amani)** is an enterprise-grade Retrieval-Augmented Generation (RAG) system built to provide grounded, legally compliant employment rights and career development guidance tailored to first-generation Kenyan graduates navigating formal employment without corporate family networks.
+**Bridge AI (Amani)** is an enterprise-grade Retrieval-Augmented Generation (RAG) system built to provide grounded, legally compliant employment rights and career development guidance tailored to young Kenyan university/college students and early-career graduates—with a special focus on empowering first-generation graduates navigating formal employment without corporate family networks.
 
 By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB Dual-Index Retrieval**, **Adaptive Local-Context Neighbor Retrieval ($N \pm 1$)**, and a **Two-Stage Legal Boundary Auditor**, Bridge AI guarantees high evidence recall and complete statutory grounding without hallucinating legal advice or inflating prompt context payloads.
 
@@ -8,10 +8,10 @@ By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB D
 
 ## 🎯 Target User & Problem Framing
 
-- **Target Population:** First-generation university and tertiary graduates in Kenya entering formal employment.
-- **The Social Capital Gap:** Most young Kenyan job seekers are the first in their households to complete higher education. Their parents and elders excel in informal trade (*Jua Kali*) or agriculture, but cannot guide them through corporate HR policies, probation law, salary deductions (PAYE, SHA 2.75%, NSSF), or corporate workplace norms.
+- **Target Population:** All young Kenyan university and college students, recent graduates, and early-career job seekers.
+- **First-Generation Impact:** Especially critical for first-generation higher-education graduates. While their families are proud, their parents and elders excel in informal trade (*Jua Kali*) or agriculture, and cannot guide them through corporate HR policies, probation laws, salary deductions (PAYE, SHA 2.75%, NSSF), or corporate workplace norms.
 - **The Vocabulary Disconnect:** Users query in informal, colloquial language (*"Can my boss dock my pay for being late?"*), whereas authoritative answers exist in formal legislation (*"Unlawful salary deductions under Section 19 of the Employment Act, Cap. 226"*).
-- **Scam Protection:** First-generation graduates desperate for their first break are heavily targeted by recruitment fraud schemes demanding upfront M-Pesa deposits (uniform fees, interview registration, medical kit deposits).
+- **Scam Protection:** Early-career job seekers desperate for their first break are heavily targeted by recruitment fraud schemes demanding upfront M-Pesa deposits (uniform fees, interview registration, medical kit deposits).
 
 ---
 
