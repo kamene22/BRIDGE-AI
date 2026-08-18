@@ -1,18 +1,28 @@
 # Bridge AI — Grounded Career & Employment Guidance RAG System
 
-**Bridge AI** is an enterprise-grade Retrieval-Augmented Generation (RAG) system built to provide grounded, legal-compliant employment rights and career development guidance tailored to the Kenyan labor market. 
+**Bridge AI (Amani)** is an enterprise-grade Retrieval-Augmented Generation (RAG) system built to provide grounded, legally compliant employment rights and career development guidance tailored to first-generation Kenyan graduates navigating formal employment without corporate family networks.
 
-By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB Dense Vector Retrieval**, and **Adaptive Local-Context Neighbor Retrieval ($N \pm 1$)**, Bridge AI guarantees high evidence recall and complete statutory grounding without hallucinating legal advice or inflating prompt context payloads.
+By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB Dual-Index Retrieval**, **Adaptive Local-Context Neighbor Retrieval ($N \pm 1$)**, and a **Two-Stage Legal Boundary Auditor**, Bridge AI guarantees high evidence recall and complete statutory grounding without hallucinating legal advice or inflating prompt context payloads.
+
+---
+
+## 🎯 Target User & Problem Framing
+
+- **Target Population:** First-generation university and tertiary graduates in Kenya entering formal employment.
+- **The Social Capital Gap:** Most young Kenyan job seekers are the first in their households to complete higher education. Their parents and elders excel in informal trade (*Jua Kali*) or agriculture, but cannot guide them through corporate HR policies, probation law, salary deductions (PAYE, SHA 2.75%, NSSF), or corporate workplace norms.
+- **The Vocabulary Disconnect:** Users query in informal, colloquial language (*"Can my boss dock my pay for being late?"*), whereas authoritative answers exist in formal legislation (*"Unlawful salary deductions under Section 19 of the Employment Act, Cap. 226"*).
+- **Scam Protection:** First-generation graduates desperate for their first break are heavily targeted by recruitment fraud schemes demanding upfront M-Pesa deposits (uniform fees, interview registration, medical kit deposits).
 
 ---
 
 ## 🚀 Key Features & Highlights
 
 - **Statutory & Employment Legal Intelligence:** Grounded on authentic Kenyan statutory documents including the **Employment Act (Cap. 226)**, official **Minimum Wage Schedules**, **HELB Compliance Regulations**, and **NEA Career Placement Protocols**.
-- **Multi-Stage Evaluated RAG Architecture:** Benchmarked across 29 ground-truth evaluation queries (66 required facts) using RAGAS-style metrics: **Fact Recall**, **Complete Answer Rate**, **Precision@3**, **MRR**, and **Latency Percentiles (P50/P95)**.
-- **Adaptive Neighbor Retrieval ($N \pm 1$):** Automatically expands top-ranked vector hits with adjacent paragraph chunks from the same source document when statutory or sentence-boundary triggers fire, increasing **Complete Answer Rate by +50.0% (13.8% $\rightarrow$ 20.7%)** while preserving token efficiency.
-- **Empirically Proven Pipeline Selection:** Every architectural decision—from embedding models (`gemini-embedding-2`) and chunking (`1,500/200`) to rejecting global BM25 RRF fusion—is backed by empirical benchmark evidence.
-- **Voice Lounge & Web Interface:** Includes a modern React/Vite conversational interface (Amani AI Mentor) with real-time text-to-speech audio feedback.
+- **Multi-Stage Evaluated RAG Architecture:** Benchmarked across 29 ground-truth evaluation queries (66 required facts) and 44 multi-turn LLM-as-a-Judge cases: **Fact Recall**, **Complete Answer Rate**, **Precision@3**, **MRR**, **Grounding (1.91/2.00)**, and **P95 Retrieval Latency (536.6 ms)**.
+- **Adaptive Neighbor Retrieval ($N \pm 1$):** Automatically expands top-ranked vector hits with adjacent paragraph chunks from the same source document when statutory or sentence-boundary triggers fire, increasing **Complete Answer Rate by +50.0% (13.8% $\rightarrow$ 20.7%)** and **Fact Recall by +45.7% (0.2644 $\rightarrow$ 0.3851)** at `0.101 ms` in-memory latency.
+- **Prompt Engineering Control System:** 4-layer control mechanism incorporating persona rules (explicitly banning robotic templates like *"I understand how you feel"*), a Zero-Assumption Policy, dynamic intent prompt assembly, and an output-side Legal Boundary Auditor.
+- **Empirically Proven Pipeline Selection:** Every architectural decision—from embedding models (`gemini-embedding-2`, +52.9% MRR gain) and chunking (`1,500/200`, +31.2% Fact Recall gain) to rejecting global BM25 RRF fusion—is backed by empirical benchmark evidence.
+- **Voice Lounge & Web Interface:** Includes a modern React/Vite conversational interface (Amani AI Mentor) with real-time text-to-speech audio feedback and WebAudio streaming.
 
 ---
 
