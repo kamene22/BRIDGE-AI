@@ -53,10 +53,13 @@ class RetrievalEngine:
         try:
             self.legal_collection = self.chroma_client.get_collection("kenya_employment_act_index")
             self.handbook_collection = self.chroma_client.get_collection("kenya_career_handbook_index")
+            self.collection = self.legal_collection
             self.has_multi_index = True
         except Exception:
             try:
                 self.collection = self.chroma_client.get_collection("bridge_ai_corpus")
+                self.legal_collection = self.collection
+                self.handbook_collection = self.collection
                 self.has_multi_index = False
             except Exception:
                 self.legal_collection = self.chroma_client.get_or_create_collection("kenya_employment_act_index")
