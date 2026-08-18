@@ -40,7 +40,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 class RetrievalEngine:
     def __init__(self):
-        self.chroma_db_path = os.getenv("CHROMA_DB_PATH", "/home/monic/projects/BridgeAI/db")
+        default_db = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "db"))
+        self.chroma_db_path = os.getenv("CHROMA_DB_PATH", default_db)
         
         # Connect to ChromaDB with telemetry disabled
         self.chroma_client = chromadb.PersistentClient(
