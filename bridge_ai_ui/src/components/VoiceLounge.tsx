@@ -66,7 +66,7 @@ export function VoiceLounge() {
           <div className="voice-greeting-header">
             <span className="greeting-sub">Bridge AI Companion</span>
             <h2 className="greeting-title">
-              "Hey there, I'm Amani. I'm here if you want to talk something through."
+              "Hey there, I'm Amani. Think of me as your sounding board for anything workplace or career-related."
             </h2>
           </div>
 
