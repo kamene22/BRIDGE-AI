@@ -5,7 +5,8 @@ import datetime
 from typing import Dict, List, Optional, Any
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from dotenv import load_dotenv
+
 try:
     from google import genai
 except ImportError:
