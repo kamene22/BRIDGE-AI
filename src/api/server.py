@@ -6,8 +6,10 @@ from typing import Dict, List, Optional, Any
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from dotenv import load_dotenv
-from google import genai
+try:
+    from google import genai
+except ImportError:
+    import google.generativeai as genai
 
 load_dotenv()
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
