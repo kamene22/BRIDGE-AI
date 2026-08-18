@@ -53,6 +53,17 @@ class ChatRequest(BaseModel):
     message: str
     session_id: Optional[str] = 'default'
 
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "message": "What are my legal rights during probation in Kenya?",
+                    "session_id": "demo_session"
+                }
+            ]
+        }
+    }
+
 class ChatResponse(BaseModel):
     answer: str
     sources: List[str]
