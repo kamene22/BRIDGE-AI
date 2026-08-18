@@ -16,6 +16,14 @@ import { GeminiLiveClient } from '../services/geminiLiveClient';
 import type { FunctionCall } from '../services/geminiLiveClient';
 import { AudioEngine } from '../services/audioEngine';
 
+const getApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (envUrl && envUrl.trim() && !envUrl.startsWith('/')) {
+    return envUrl.replace(/\/+$/, '');
+  }
+  return 'https://bridge-ai-backend-91js.onrender.com';
+};
+
 export function useVoiceSession() {
   const clientRef = useRef<GeminiLiveClient | null>(null);
   const audioRef = useRef<AudioEngine | null>(null);
@@ -58,7 +66,7 @@ export function useVoiceSession() {
     const responses = await Promise.all(
       calls.map(async (call) => {
         try {
-          const res = await fetch('/api/voice-rag', {
+          const res = await fetch(`${getApiBaseUrl()}/api/voice-rag`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -111,8 +119,7 @@ export function useVoiceSession() {
   // ── Token Management ────────────────────────────────
 
   const fetchToken = useCallback(async (): Promise<string> => {
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://bridge-ai-backend-91js.onrender.com';
-    const res = await fetch(`${API_BASE_URL}/api/token`, { method: 'POST' });
+    const res = await fetch(`${getApiBaseUrl()}/api/token`, { method: 'POST' });
     if (!res.ok) throw new Error(`Token fetch failed: ${res.status}`);
     const data = await res.json();
     tokenExpiryRef.current = new Date(data.expires_at).getTime();
