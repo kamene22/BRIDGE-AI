@@ -30,16 +30,50 @@ By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB D
 
 ```mermaid
 flowchart TD
-    UserQuery["User Input Query"] --> QExp["Statutory Query Expansion"]
-    QExp --> Embed["Gemini Embedding 2 (models/gemini-embedding-2)"]
-    Embed --> VectorSearch["ChromaDB Vector Retrieval (Top-3 Chunks)"]
-    VectorSearch --> AdaptiveTrigger{"Adaptive Triggers Fired?\n(Statutory / Sentence Boundary)"}
-    AdaptiveTrigger -- Yes --> NeighborExpand["Adaptive Neighbor Retrieval (Fetch N±1 Chunks)"]
-    AdaptiveTrigger -- No --> BaseContext["Base Top-3 Context"]
-    NeighborExpand --> Assembly["Deduplicated Context Assembly"]
-    BaseContext --> Assembly
-    Assembly --> LLM["Gemini LLM Grounded Generation"]
-    LLM --> Response["Grounded Answer + Citations"]
+    subgraph INPUT_ROUTING["1. INPUT & ROUTING LAYER"]
+        UserQuery["🗣️ User Input (Text / Voice)"] --> FastPath{"⚡ Fast-Path Router\n(<25ms Greeting?)"}
+        FastPath -- Yes --> FastResp["⚡ Direct Greeting (<25ms)\n(Skip RAG & LLM)"]
+        FastPath -- No --> IntentClass["🧠 Intent Classifier\n(6 Categories)"]
+    end
+
+    subgraph RETRIEVAL_LAYER["2. DENSE RETRIEVAL & ADAPTIVE NEIGHBOR EXPANSION"]
+        IntentClass --> QExp["🔍 Statutory Query Expander\n('<0.01ms' Synonym Translation)"]
+        QExp --> Embed["📐 Gemini Embedding 2\n(3072d Dense Vector, '455.5ms')"]
+        Embed --> VectorSearch["🗄️ ChromaDB Dual-Index Search\n(Cosine Similarity, '18.5ms')"]
+        VectorSearch --> AdaptiveTrigger{"⚡ Adaptive Boundary Trigger?\n(Statutory / Clause Boundary)"}
+        AdaptiveTrigger -- Yes --> NeighborExpand["🧩 Adaptive Neighbor Retrieval (N±1)\n(Fetches Adjacent Chunks, '0.101ms')"]
+        AdaptiveTrigger -- No --> BaseContext["📄 Base Top-3 Chunks"]
+        NeighborExpand --> ContextAssembly["📚 Context Assembly & Deduplication"]
+        BaseContext --> ContextAssembly
+    end
+
+    subgraph GENERATION_SAFETY["3. GENERATION & SAFETY AUDIT LAYER"]
+        ContextAssembly --> LLM["🤖 Gemini 2.5 Flash Generation\n(temp=0.2, max_tokens=550)"]
+        LLM --> LegalAuditor{"⚖️ Two-Stage Legal Auditor\n(Overconfident Claim Check?)"}
+        LegalAuditor -- Flagged --> Rewrite["✍️ Safety Rewrite Prompt\n(Recalibrates Legal Confidence, '+35ms')"]
+        LegalAuditor -- Clear --> FinalResp["✅ Grounded Output Response"]
+        Rewrite --> FinalResp
+    end
+
+    subgraph OUTPUT_MEMORY["4. OUTPUT & MEMORY LAYER"]
+        FinalResp --> UIOutput["📱 Streaming UI + Cited Sources\n+ Web Speech API Audio TTS"]
+        UIOutput --> Memory["💾 Session Memory Manager\n(Firestore / Sliding Window)"]
+    end
+
+    %% Class Definitions for High-Contrast Dark Styling
+    classDef inputStyle fill:#1E293B,stroke:#3B82F6,stroke-width:3px,color:#F8FAFC;
+    classDef retrievalStyle fill:#0F172A,stroke:#06B6D4,stroke-width:3px,color:#F8FAFC;
+    classDef triggerStyle fill:#312E81,stroke:#6366F1,stroke-width:3px,color:#F8FAFC;
+    classDef genStyle fill:#1E1B4B,stroke:#8B5CF6,stroke-width:3px,color:#F8FAFC;
+    classDef safetyStyle fill:#78350F,stroke:#F59E0B,stroke-width:3px,color:#F8FAFC;
+    classDef outputStyle fill:#064E3B,stroke:#10B981,stroke-width:3px,color:#F8FAFC;
+
+    class UserQuery,IntentClass inputStyle;
+    class FastPath,AdaptiveTrigger,LegalAuditor triggerStyle;
+    class QExp,Embed,VectorSearch,NeighborExpand,BaseContext,ContextAssembly retrievalStyle;
+    class LLM genStyle;
+    class Rewrite safetyStyle;
+    class FastResp,FinalResp,UIOutput,Memory outputStyle;
 ```
 
 ---
