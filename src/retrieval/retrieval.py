@@ -55,9 +55,14 @@ class RetrievalEngine:
             self.handbook_collection = self.chroma_client.get_collection("kenya_career_handbook_index")
             self.has_multi_index = True
         except Exception:
-            # Fallback to single collection if multi-index not ready
-            self.collection = self.chroma_client.get_collection("bridge_ai_corpus")
-            self.has_multi_index = False
+            try:
+                self.collection = self.chroma_client.get_collection("bridge_ai_corpus")
+                self.has_multi_index = False
+            except Exception:
+                self.legal_collection = self.chroma_client.get_or_create_collection("kenya_employment_act_index")
+                self.handbook_collection = self.chroma_client.get_or_create_collection("kenya_career_handbook_index")
+                self.collection = self.chroma_client.get_or_create_collection("bridge_ai_corpus")
+                self.has_multi_index = True
         
         # Initialize Gemini Provider for query embedding
         self.provider = GeminiProvider()
