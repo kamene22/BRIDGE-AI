@@ -191,30 +191,37 @@ def chat(req: ChatRequest):
     if not req.message or not req.message.strip():
         raise HTTPException(status_code=400, detail='Message cannot be empty.')
 
-    t0 = time.time()
-    pipe = get_pipeline(req.session_id)
+    try:
+        t0 = time.time()
+        pipe = get_pipeline(req.session_id)
 
-    res = pipe.conversational_rag_query(req.message, session_id=req.session_id)
-    lat = int((time.time() - t0) * 1000)
+        res = pipe.conversational_rag_query(req.message, session_id=req.session_id)
+        lat = int((time.time() - t0) * 1000)
 
-    metrics['total_requests'] += 1
-    metrics['total_latency_ms'] += lat
-    g_trace = res.get('trace', {}).get('guardrails', {})
-    if g_trace.get('scam_detected'):
-        metrics['scam_flags'] += 1
-    if g_trace.get('out_of_scope'):
-        metrics['out_of_scope_flags'] += 1
-    if g_trace.get('legal_boundary_triggered'):
-        metrics['legal_disclaimers'] += 1
+        metrics['total_requests'] += 1
+        metrics['total_latency_ms'] += lat
+        g_trace = res.get('trace', {}).get('guardrails', {})
+        if g_trace.get('scam_detected'):
+            metrics['scam_flags'] += 1
+        if g_trace.get('out_of_scope'):
+            metrics['out_of_scope_flags'] += 1
+        if g_trace.get('legal_boundary_triggered'):
+            metrics['legal_disclaimers'] += 1
 
-    return ChatResponse(
-        answer=res['answer'],
-        sources=res['sources'],
-        redirected=res.get('redirected', False),
-        guardrails=g_trace,        latency_ms=lat,
-        intent=res.get('trace', {}).get('intent', {}).get('intent', 'General'),
-        eval_metadata=res.get('eval_metadata')
-    )
+        return ChatResponse(
+            answer=res['answer'],
+            sources=res['sources'],
+            redirected=res.get('redirected', False),
+            guardrails=g_trace,
+            latency_ms=lat,
+            intent=res.get('trace', {}).get('intent', {}).get('intent', 'General'),
+            eval_metadata=res.get('eval_metadata')
+        )
+    except Exception as e:
+        print(f"Error in chat endpoint: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get('/api/telemetry')
 def get_telemetry():
