@@ -156,7 +156,7 @@ export function useVoiceSession() {
         console.log('[VoiceSession] Setup complete');
         store.setState({ connected: true, orbState: 'speaking' });
         // Auto-trigger Amani's spoken introduction
-        client.sendText('Please say out loud warmly and naturally: "Hey there, I\'m Amani. I\'m here if you want to talk something through." Do not add unprompted career advice.');
+        client.sendText('Please say out loud warmly and naturally: "Hey there, I\'m Amani. Think of me as your sounding board for anything workplace or career-related." Do not add unprompted career advice.');
 
         // Auto-start microphone capture so Amani listens to user speech immediately
         audioRef.current?.startCapture((base64, _amplitude) => {
