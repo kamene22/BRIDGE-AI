@@ -6,6 +6,17 @@ By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB D
 
 ---
 
+## 🌐 Live Production Submission Links
+
+| Component | Host Platform | Production Link | Status |
+| :--- | :--- | :--- | :---: |
+| **Interactive Case Study** | Lovable | 👉 [bridge-kenya-mentor.lovable.app](https://bridge-kenya-mentor.lovable.app) | 🟢 **Live** |
+| **Live Web App (Voice & Chat)** | Vercel | 👉 [bridge-ai-eosin.vercel.app](https://bridge-ai-eosin.vercel.app) | 🟢 **Live** |
+| **Live API & Swagger Docs** | Render | 👉 [bridge-ai-backend-91js.onrender.com/docs](https://bridge-ai-backend-91js.onrender.com/docs) | 🟢 **Live** |
+| **GitHub Source Code** | GitHub | 👉 [github.com/kamene22/BRIDGE-AI](https://github.com/kamene22/BRIDGE-AI) | 🟢 **Synced** |
+
+---
+
 ## 🎯 Target User & Problem Framing
 
 - **Target Population:** All young Kenyan university and college students, recent graduates, and early-career job seekers.
@@ -18,11 +29,11 @@ By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB D
 ## 🚀 Key Features & Highlights
 
 - **Statutory & Employment Legal Intelligence:** Grounded on authentic Kenyan statutory documents including the **Employment Act (Cap. 226)**, official **Minimum Wage Schedules**, **HELB Compliance Regulations**, and **NEA Career Placement Protocols**.
+- **Real-Time Voice Lounge & React Web Interface:** Built on **React 18 + Vite + TypeScript** (`bridge_ai_ui/`). Features a bidirectional voice lounge powered by **Gemini 3.1 Flash Live WebSocket API** (`bidiGenerateContent`) with an animated voice orb (`Kore` voice), real-time transcription, and secure backend ephemeral token auth (`/api/token`).
 - **Multi-Stage Evaluated RAG Architecture:** Benchmarked across 29 ground-truth evaluation queries (66 required facts) and 44 multi-turn LLM-as-a-Judge cases: **Fact Recall**, **Complete Answer Rate**, **Precision@3**, **MRR**, **Grounding (1.91/2.00)**, and **P95 Retrieval Latency (536.6 ms)**.
 - **Adaptive Neighbor Retrieval ($N \pm 1$):** Automatically expands top-ranked vector hits with adjacent paragraph chunks from the same source document when statutory or sentence-boundary triggers fire, increasing **Complete Answer Rate by +50.0% (13.8% $\rightarrow$ 20.7%)** and **Fact Recall by +45.7% (0.2644 $\rightarrow$ 0.3851)** at `0.101 ms` in-memory latency.
 - **Prompt Engineering Control System:** 4-layer control mechanism incorporating persona rules (explicitly banning robotic templates like *"I understand how you feel"*), a Zero-Assumption Policy, dynamic intent prompt assembly, and an output-side Legal Boundary Auditor.
 - **Empirically Proven Pipeline Selection:** Every architectural decision—from embedding models (`gemini-embedding-2`, +52.9% MRR gain) and chunking (`1,500/200`, +31.2% Fact Recall gain) to rejecting global BM25 RRF fusion—is backed by empirical benchmark evidence.
-- **Voice Lounge & Web Interface:** Includes a modern React/Vite conversational interface (Amani AI Mentor) with real-time text-to-speech audio feedback and WebAudio streaming.
 
 ---
 
@@ -31,7 +42,7 @@ By combining **Gemini Embedding 2**, **Statutory Query Expansion**, **ChromaDB D
 ```mermaid
 flowchart TD
     subgraph INPUT_ROUTING["1. INPUT & ROUTING LAYER"]
-        UserQuery["🗣️ User Input (Text / Voice)"] --> FastPath{"⚡ Fast-Path Router\n(<25ms Greeting?)"}
+        UserQuery["🗣️ User Input (Text / Real-Time Voice)"] --> FastPath{"⚡ Fast-Path Router\n(<25ms Greeting?)"}
         FastPath -- Yes --> FastResp["⚡ Direct Greeting (<25ms)\n(Skip RAG & LLM)"]
         FastPath -- No --> IntentClass["🧠 Intent Classifier\n(6 Categories)"]
     end
@@ -40,7 +51,8 @@ flowchart TD
         IntentClass --> QExp["🔍 Statutory Query Expander\n('<0.01ms' Synonym Translation)"]
         QExp --> Embed["📐 Gemini Embedding 2\n(3072d Dense Vector, '455.5ms')"]
         Embed --> VectorSearch["🗄️ ChromaDB Dual-Index Search\n(Cosine Similarity, '18.5ms')"]
-        VectorSearch --> AdaptiveTrigger{"⚡ Adaptive Boundary Trigger?\n(Statutory / Clause Boundary)"}
+        AdaptiveTrigger{"⚡ Adaptive Boundary Trigger?\n(Statutory / Clause Boundary)"}
+        VectorSearch --> AdaptiveTrigger
         AdaptiveTrigger -- Yes --> NeighborExpand["🧩 Adaptive Neighbor Retrieval (N±1)\n(Fetches Adjacent Chunks, '0.101ms')"]
         AdaptiveTrigger -- No --> BaseContext["📄 Base Top-3 Chunks"]
         NeighborExpand --> ContextAssembly["📚 Context Assembly & Deduplication"]
@@ -48,7 +60,7 @@ flowchart TD
     end
 
     subgraph GENERATION_SAFETY["3. GENERATION & SAFETY AUDIT LAYER"]
-        ContextAssembly --> LLM["🤖 Gemini 2.5 Flash Generation\n(temp=0.2, max_tokens=550)"]
+        ContextAssembly --> LLM["🤖 Gemini 3.1 Flash-Lite Generation\n(temp=0.2, max_tokens=550)"]
         LLM --> LegalAuditor{"⚖️ Two-Stage Legal Auditor\n(Overconfident Claim Check?)"}
         LegalAuditor -- Flagged --> Rewrite["✍️ Safety Rewrite Prompt\n(Recalibrates Legal Confidence, '+35ms')"]
         LegalAuditor -- Clear --> FinalResp["✅ Grounded Output Response"]
@@ -56,8 +68,8 @@ flowchart TD
     end
 
     subgraph OUTPUT_MEMORY["4. OUTPUT & MEMORY LAYER"]
-        FinalResp --> UIOutput["📱 Streaming UI + Cited Sources\n+ Web Speech API Audio TTS"]
-        UIOutput --> Memory["💾 Session Memory Manager\n(Firestore / Sliding Window)"]
+        FinalResp --> UIOutput["📱 React UI / Gemini 3.1 Flash Live WebSocket\n+ Grounded Source Citations"]
+        UIOutput --> Memory["💾 Session Memory Manager\n(Sliding Window / Session Storage)"]
     end
 
     %% Class Definitions for High-Contrast Dark Styling
