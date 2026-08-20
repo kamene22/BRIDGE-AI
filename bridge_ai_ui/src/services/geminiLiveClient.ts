@@ -235,9 +235,9 @@ CRITICAL RULES:
         realtimeInputConfig: {
           automaticActivityDetection: {
             disabled: false,
-            silenceDurationMs: 2000,
-            prefixPaddingMs: 500,
-            endOfSpeechSensitivity: 'END_SENSITIVITY_LOW',
+            silenceDurationMs: 500,
+            prefixPaddingMs: 200,
+            endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
             startOfSpeechSensitivity: 'START_SENSITIVITY_LOW',
           },
           activityHandling: 'ACTIVITY_HANDLING_UNSPECIFIED',
