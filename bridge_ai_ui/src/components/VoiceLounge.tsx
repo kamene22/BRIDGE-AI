@@ -50,9 +50,9 @@ export function VoiceLounge() {
     sendPrompt(text);
   };
 
-  // Only show starter prompt chips if history has few messages
+  // Only show starter prompt chips if not connected and history has few messages
   const userMessages = messages.filter((m) => m.role === 'user');
-  const showStarterPrompts = userMessages.length < 2;
+  const showStarterPrompts = !connected && userMessages.length < 2;
 
   return (
     <div className="voice-lounge">

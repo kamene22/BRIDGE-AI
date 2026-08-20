@@ -43,14 +43,14 @@ export function LuminousOrb({ size = 220 }: LuminousOrbProps) {
   }, [orbState, micAmplitude, speakerAmplitude]);
 
   const stateLabel = useMemo(() => {
-    if (!connected && orbState === 'idle') return 'Talk to Amani';
+    if (!connected) return 'Tap to start voice session';
     const labels: Record<OrbState, string> = {
-      idle: 'Tap to connect',
+      idle: 'Connected — Ready',
       listening: "I'm listening...",
-      speaking: 'Amani',
-      thinking: 'Give me a second...',
+      speaking: 'Amani is speaking...',
+      thinking: 'Searching knowledge base...',
     };
-    return labels[orbState];
+    return labels[orbState] || 'Connected';
   }, [orbState, connected]);
 
   return (
