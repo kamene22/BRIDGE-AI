@@ -173,8 +173,9 @@ export const useAppStore = create<AppState>((set, get) => ({
 
     addMessage({ role: 'user', text });
 
+    const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const envUrl = import.meta.env.VITE_API_BASE_URL;
-    const API_BASE_URL = (envUrl && envUrl.trim() && !envUrl.startsWith('/')) ? envUrl.replace(/\/+$/, '') : 'https://bridge-ai-backend-91js.onrender.com';
+    const API_BASE_URL = isLocalhost ? 'http://localhost:8000' : ((envUrl && envUrl.trim() && !envUrl.startsWith('/')) ? envUrl.replace(/\/+$/, '') : 'https://bridge-ai-backend-91js.onrender.com');
 
     try {
       const res = await fetch(`${API_BASE_URL}/api/chat`, {
