@@ -150,17 +150,30 @@ export function useVoiceSession() {
     try {
       store.getState().addMessage({ role: 'system', text: 'Connecting to voice session…' });
 
-      // 1. Fetch ephemeral token
-      const token = await fetchToken();
-
-      // 2. Create audio engine
+      // 1. Initialize audio engine and request microphone permission IMMEDIATELY in user click handler stack
       audioRef.current = new AudioEngine();
       await audioRef.current.initPlayback();
 
-      // 3. Create Gemini Live client
+      await audioRef.current.startCapture((base64, amplitude) => {
+        // Only send mic audio if Amani is NOT actively speaking or if user speaks loudly
+        const isAmaniSpeaking = store.getState().orbState === 'speaking' || (audioRef.current?.isPlaying ?? false);
+        if (isAmaniSpeaking && amplitude < 0.12) {
+          return;
+        }
+        clientRef.current?.sendAudio(base64);
+      });
+      
+      store.setState({ voiceEnabled: true });
+      startAmplitudeLoop();
+      console.log('[VoiceSession] Microphone permission granted and capture started');
+
+      // 2. Fetch ephemeral token
+      const token = await fetchToken();
+
       // 3. Create Gemini Live client with voice and language preference
       const { voiceName, languagePreference } = store.getState();
       const client = new GeminiLiveClient(token, { voiceName, languagePreference });
+      clientRef.current = client;
 
       // 4. Wire callbacks
       client.onSetupComplete = () => {
@@ -168,22 +181,6 @@ export function useVoiceSession() {
         store.setState({ connected: true, orbState: 'speaking' });
         // Auto-trigger Amani's spoken introduction
         client.sendText('Please say out loud warmly and naturally: "Hey there, I\'m Amani. Think of me as your sounding board for anything workplace or career-related." Do not add unprompted career advice.');
-
-        // Auto-start microphone capture with echo suppression
-        audioRef.current?.startCapture((base64, amplitude) => {
-          // If Amani is actively speaking or playing audio, mute mic output to prevent room/speaker echo from interrupting Amani mid-sentence.
-          // User can speak freely once Amani finishes her turn (orb returns to 'listening' or 'idle').
-          const isAmaniSpeaking = store.getState().orbState === 'speaking' || (audioRef.current?.isPlaying ?? false);
-          if (isAmaniSpeaking && amplitude < 0.12) {
-            return;
-          }
-          clientRef.current?.sendAudio(base64);
-        }).then(() => {
-          store.setState({ voiceEnabled: true });
-          startAmplitudeLoop();
-        }).catch((err) => {
-          console.error('[VoiceSession] Mic auto-start error:', err);
-        });
       };
 
       client.onAudioChunk = (base64) => {
